@@ -1,0 +1,62 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="dateandtime">
+      <div class="day">
+        <p div="textDay">
+          <span style="font-style: italic; font-weight: bold;font-size: 12px">Tunis,</span>
+          
+          <span style="font-size: 12px; font-style: italic; font-weight: bold">
+            {{ this.fullToday }}</span
+          >
+        </p>
+      </div>
+
+      <div class="time">
+        <p div="textTime">
+          {{ this.fullTime }}
+        </p>
+      </div>
+    </div>
+    <div id="logo-journal">
+      <a [routerLink]="['']">
+        <img src="assets/logoJournal.png" />
+      </a>
+     
+    </div>
+    <div id ="searchBar">
+      <div class="md-form active-cyan active-cyan-2 mb-3">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+      </div>
+
+      </div>
+     
+     
+  </div>
+  <div id="nav-horizantal">
+  <div class="col-md-6">
+     <div id="texthorizantal">
+    <ul class="nav red-gradient py-4 mb-4 font-weight-bold z-depth-1">
+      <li class="nav-item">
+        <a class="nav-link active white-text" [routerLink]="['','national-news']"><span style="color:wheat">National</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link white-text" [routerLink]="['','inter-news']"><span style="color:wheat">International</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link white-text" [routerLink]="['','economy-news']"><span style="color:wheat">Economy</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link white-text" [routerLink]="['','sport-news']" href="#!"><span style="color:wheat">Sport</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link red-text" [routerLink]="['','art-news']"><span style="color:wheat">Art</span></a>
+      </li>
+      
+    </ul>
+  </div>
+   
+  </div>
+ 
+</div>
+
+</div>

@@ -1,0 +1,83 @@
+.jumbotron {
+    
+    /* background-color:#071675;  */
+    background-color :#B0E0E6 ; 
+    color: #ffffff;
+    height:150px;
+    width:100%;
+    top:0px;
+  }
+
+  #logo {
+    position: absolute;
+    height:85px;
+    width:235px;
+    top:35px;
+    left:35px;
+  }
+
+  td {
+    width: 1.5em;
+    height: 1.5em;
+    background: #d2d2d2;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .day{
+    position:absolute;
+    color:grey;
+    /* color:#FFDC00;color:#FFDC00;;; */
+    left:10px;
+    top:25px;
+    
+  }
+  .time {
+    position:absolute;
+    
+    color:grey;
+    top:60px;
+    left:10px;
+    font-size : 14px;
+    font-style: italic;
+    font-weight: bold;
+  }
+  #textDay{
+    direction: rtl;
+  unicode-bidi: bidi-override;
+ 
+  }
+  #logo-journal{
+    position:relative;
+    left:400px;
+    top:-100px;
+    width:80px
+  }
+  .dateandtime{
+    width:30%
+  }
+  #searchBar{
+    position:relative;
+    left: 1050px;
+    width:15%;
+    top:-240px;
+   
+  }
+  .nav a.white-text:hover {
+    color: #e0e0e0!important;
+    }
+  #nav-horizantal{
+      position:relative;
+      top:-190px;
+      height:60px;
+      background-color:grey ;
+    }
+
+  #texthorizantal{
+    position:absolute;
+    top:-12px
+  }  
+
+  li:active {
+    color:red;
+}

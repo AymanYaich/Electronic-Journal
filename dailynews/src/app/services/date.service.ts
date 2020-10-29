@@ -1,0 +1,20 @@
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+export interface Todo {
+  id?;
+  createdAt?: number ;
+  value : object;
+}
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DateService {
+private _dateInteraction = new BehaviorSubject<[]>([])
+observerDate=this._dateInteraction.asObservable();
+  constructor() { }
+  sendDate(object){
+    this._dateInteraction.next(object)
+  }
+}

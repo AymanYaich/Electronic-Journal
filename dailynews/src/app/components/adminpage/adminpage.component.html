@@ -1,0 +1,257 @@
+<app-navbar></app-navbar>
+
+<br /><br />
+<div id="buttonsList">
+  <table>
+    <tr>
+      <th>
+        <button
+          type="button"
+          id="buttonNews"
+          class="btn btn-primary"
+          (click)="nationalEdit()"
+        >
+          National
+        </button>
+      </th>
+      <th>
+        <button
+          type="button"
+          id="buttonNews"
+          class="btn btn-primary"
+          (click)="internationalEdit()"
+        >
+          International
+        </button>
+      </th>
+      <th>
+        <button
+          type="button"
+          id="buttonNews"
+          class="btn btn-primary"
+          (click)="economyEdit()"
+        >
+          Economy
+        </button>
+      </th>
+      <th>
+        <button
+          type="button"
+          id="buttonNews"
+          class="btn btn-primary"
+          (click)="sportEdit()"
+        >
+          Sport
+        </button>
+      </th>
+      <th>
+        <button
+          type="button"
+          id="buttonNews"
+          class="btn btn-primary"
+          (click)="artEdit()"
+        >
+          Art
+        </button>
+      </th>
+    </tr>
+  </table>
+</div>
+
+<br /><br /><br />
+
+<!-- <!-- <div id="NewsEditionContainer" [ngSwitch]="statusVal"> -->
+<div id="NewsEditionContainer" [ngSwitch]="statusVal">
+  <div *ngSwitchCase="'national'">
+    <h1 style="color: red; font-weight: bolder">National News</h1>
+
+    <form (ngSubmit)="interNational()" enctype="multipart/form-data">
+      <!-- <label for="filename">Upload the photo of the news</label>
+      <br />
+      <input
+        #fileInput
+        type="file"
+        id="myFile"
+        [(ngModel)]="imageUrl"
+        name="imageUrl"
+      /> -->
+      <label for="imageUrl">EnterUrl</label>
+      <input type="text"  id="imageUrl"
+      name="imageUrl"
+      [(ngModel)]="imageUrl"/>
+      <br /><br />
+      <label for="Title">Add the title of the news</label>
+      <br />
+      <input
+        type="text"
+        id="Title"
+        name="Title"
+        [(ngModel)]="title"
+        placeholder="title"
+      />
+      <br /><br />
+      <label for="TextNews">Add news text</label>
+      <br />
+      <textarea
+        id="TextNews"
+        name="TextNews"
+        [(ngModel)]="textNews"
+        rows="4"
+        cols="50"
+      >
+      </textarea>
+      <br />
+      <button type="submit">Add News</button>
+    </form>
+  </div>
+  <div *ngSwitchCase="'international'">
+    <h1 style="color: red; font-weight: bolder">InterNational News</h1>
+    <form (ngSubmit)="national()" enctype="multipart/form-data">
+      <label for="imageUrl">ENterUrl</label>
+      <input type="text"  id="imageUrl"
+      name="imageUrl"
+      [(ngModel)]="imageUrl"/>
+      <br /><br />
+      <label for="Title">Add the title of the news</label>
+      <br />
+      <input
+        type="text"
+        id="Title"
+        name="Title"
+        [(ngModel)]="title"
+        placeholder="title"
+      />
+      <br /><br />
+      <label for="TextNews">Add news text</label>
+      <br />
+      <textarea
+        id="TextNews"
+        name="TextNews"
+        [(ngModel)]="textNews"
+        rows="4"
+        cols="50"
+      >
+      </textarea>
+      <br />
+      <button type="submit">Add News</button>
+    </form>
+  </div>
+  <div *ngSwitchCase="'economy'">
+    <h1 style="color: red; font-weight: bolder">Economy News</h1>
+    <form (ngSubmit)="EconomySubmit()" enctype="multipart/form-data">
+      <label for="imageUrl">Upload the photo of the news</label>
+      <br />
+      <input
+        #fileInput
+        type="file"
+        id="myFile"
+        [(ngModel)]="imageUrl"
+        name="imageUrl"
+      />
+      <br /><br />
+      <label for="Title">Add the title of the news</label>
+      <br />
+      <input
+        type="text"
+        id="Title"
+        name="Title"
+        [(ngModel)]="title"
+        placeholder="title"
+      />
+      <br /><br />
+      <label for="TextNews">Add news text</label>
+      <br />
+      <textarea
+        id="TextNews"
+        name="TextNews"
+        [(ngModel)]="textNews"
+        rows="20"
+        cols="100"
+      >
+      </textarea>
+      <br />
+      <button type="submit">Add News</button>
+    </form>
+  </div>
+  <div *ngSwitchCase="'sport'">
+    <h1 style="color: red; font-weight: bolder">Sport News</h1>
+    <form (ngSubmit)="sport()" enctype="multipart/form-data">
+      <label for="filename">Upload the photo of the news</label>
+      <br />
+      <input
+        #fileInput
+        type="file"
+        id="myFile"
+        [(ngModel)]="imageUrl"
+        name="imageUrl"
+        
+      />
+    <br /><br />
+      <br /><br />
+      <label for="Title">Add the title of the news</label>
+      <br />
+      <input
+        type="text"
+        id="Title"
+        name="Title"
+        [(ngModel)]="title"
+        placeholder="title"
+      />
+      <br /><br />
+      <label for="TextNews">Add news text</label>
+      <br />
+      <textarea
+        id="TextNews"
+        name="TextNews"
+        [(ngModel)]="textNews"
+        rows="4"
+        cols="50"
+      >
+      </textarea>
+      <br />
+      <button type="submit">Add News</button>
+    </form>
+  </div>
+  <div *ngSwitchCase="'art'">
+    <h1 style="color: red; font-weight: bolder">Art News</h1>
+    <form (ngSubmit)="interNational()" enctype="multipart/form-data">
+      <label for="filename">Upload the photo of the news</label>
+      <br />
+      <input
+        #fileInput
+        type="file"
+        id="myFile"
+        [(ngModel)]="imageUrl"
+        name="imageUrl"
+      />
+      <br /><br />
+      <label for="Title">Add the title of the news</label>
+      <br />
+      <input
+        type="text"
+        id="Title"
+        name="Title"
+        [(ngModel)]="title"
+        placeholder="title"
+      />
+      <br /><br />
+      <label for="TextNews">Add news text</label>
+      <br />
+      <textarea
+        id="TextNews"
+        name="TextNews"
+        [(ngModel)]="textNews"
+        rows="4"
+        cols="50"
+      >
+      </textarea>
+      <br />
+      <button type="submit">Add News</button>
+    </form>
+  </div>
+
+  <div *ngSwitchCase="' '">
+    <h1>Add your choice</h1>
+  </div>
+</div>
+-->
