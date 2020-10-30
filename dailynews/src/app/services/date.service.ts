@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 export interface Todo {
   id?;
   createdAt?: number ;
-  value : object;
+  value : string;
 }
 
 
@@ -14,7 +14,7 @@ export class DateService {
 private _dateInteraction = new BehaviorSubject<[]>([])
 observerDate=this._dateInteraction.asObservable();
   constructor() { }
-  sendDate(object){
-    this._dateInteraction.next(object)
+  sendDate(date){
+    this._dateInteraction.next(date)
   }
 }

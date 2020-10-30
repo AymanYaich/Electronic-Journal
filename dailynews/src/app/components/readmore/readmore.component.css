@@ -1,5 +1,37 @@
-img{
-    position:relative;
-    width:25%;
-    height:200px;
+#categoryConatainer *{
+    position:absolute;
+    top:200px;
+    width:500px;
+    height:50px;
+    border-radius:0 !important ;
+    background-color:#b3e3fc;
 }
+    
+    img{
+     position :absolute;
+     top:280px;
+     left:20px;
+     width:500px;
+     height:200px;
+}
+ 
+ #dateContainer{
+    position:absolute;
+    top:500px; 
+    left:20px;
+ } 
+ #titleContainer{
+    position:absolute;
+    top:530px;
+    width:500px;
+    height:50px;
+    left:20px;
+ }
+ 
+ #textContainer{
+     position:absolute;
+     top:610px;
+     left:20px;
+     width:900px;
+     /* background-color:#eae9e9; */
+ }

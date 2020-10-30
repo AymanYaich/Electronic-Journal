@@ -19,6 +19,8 @@ export class AdminpageComponent implements OnInit {
   sportStatus:boolean=false;
   artStatus:boolean=false;
   statusVal:String="";
+  dataBase:any=[]
+ // upload:any;
   constructor(public http: HttpClient ) {}
   
   ngOnInit(): void {
@@ -35,17 +37,8 @@ export class AdminpageComponent implements OnInit {
     this.http.post('http://localhost:3000/international/creates', news).subscribe((data) => {
          console.log('button Submit works hello!!!',data );
     });
-    //  let imageUpload = this.fileInput.nativeElement.files[0]
-    //   let fd = new FormData();
-    //   fd.append('image',imageUpload);
-    //   fd.append('title',this.title);
-    //   fd.append('text',this.textNews);
-      
-    //   this.http.post("http://localhost:3000/international/create",fd).subscribe((res)=>{
-    //     console.log(res)
-    //   })
-       
-    };
+  };
+
     national(){
       let news = {
         image:this.imageUrl,
@@ -56,6 +49,7 @@ export class AdminpageComponent implements OnInit {
         this.ngOnInit()
       })
     }
+   
     EconomySubmit(){
       
       let fd = new FormData();
@@ -67,26 +61,15 @@ export class AdminpageComponent implements OnInit {
         this.ngOnInit()
       })
     }
-   sport(){
-     let fd = new FormData();
-     fd.append('image',this.imageUrl);
-     fd.append('title',this.title);
-     fd.append('text',this.textNews)
-    //  let sportNews = {
-    //    image:this.imageUrl,
-    //    title:this.title,
-    //    text:this.textNews
-    //  };
-     this.http.post("http://localhost:3000/sport/creates",fd).subscribe(()=>{
-       this.ngOnInit();
-     })
-   }
+  
       nationalEdit(){
          this.nationalStatus=true;
          this.internationalStatus=false;
          this.economyStatus=false;
          this.sportStatus=false;
          this.artStatus=false;
+         this.dataBase.pop()
+         this.dataBase.push("national")
          this.statusData()
       };
       internationalEdit(){
@@ -95,6 +78,8 @@ export class AdminpageComponent implements OnInit {
         this.economyStatus=false;
         this.sportStatus=false;
         this.artStatus=false;
+        this.dataBase.pop()
+        this.dataBase.push("international")
          this.statusData()
       };
       economyEdit(){
@@ -103,6 +88,8 @@ export class AdminpageComponent implements OnInit {
         this.economyStatus=true;
         this.sportStatus=false;
         this.artStatus=false;
+        this.dataBase.pop()
+        this.dataBase.push("economy")
          this.statusData()
       };
       sportEdit(){
@@ -111,6 +98,8 @@ export class AdminpageComponent implements OnInit {
          this.economyStatus=false;
          this.sportStatus=true;
          this.artStatus=false;
+         this.dataBase.pop();
+         this.dataBase.push("sport")
         this.statusData()
 
       };
@@ -120,6 +109,8 @@ export class AdminpageComponent implements OnInit {
         this.economyStatus=false;
         this.sportStatus=false;
         this.artStatus=true;
+        this.dataBase.pop();
+        this.dataBase.push("art")
         this.statusData()
       };
 

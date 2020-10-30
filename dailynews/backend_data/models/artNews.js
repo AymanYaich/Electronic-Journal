@@ -1,13 +1,13 @@
 let mongoose = require ('mongoose');
 
-let nationalNewsSchema = new mongoose.Schema({
+let artNewsSchema = new mongoose.Schema({
 
     image:String,
     title:String,
     text:String,
     category:{
         type:String,
-        default:"National"
+        default:"Art"
     },
     created_at    : {
          type: Date,
@@ -19,6 +19,6 @@ let nationalNewsSchema = new mongoose.Schema({
 })
 
 
-let NationalNews = mongoose.model("NationalNews",nationalNewsSchema);
+let ArtNews = mongoose.model("ArtNews",artNewsSchema);
 
-module.exports=NationalNews;
+module.exports = ArtNews;

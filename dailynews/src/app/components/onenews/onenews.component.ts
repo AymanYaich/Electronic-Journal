@@ -56,10 +56,8 @@ export class OnenewsComponent implements OnInit {
       this._textInter.sendText(this.oneNews.text)
     }
     sendDateTo(){
-      this._dateInteraction.sendDate({'category':this.oneNews.category,
-                                      'date':this.date,
-                                       'time':this.time
-                                      })
+      this._dateInteraction.sendDate(`${this.date} ${this.time} ${this.oneNews.category}`)
+                                      
     }
     readMore(){
       

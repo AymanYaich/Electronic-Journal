@@ -3,7 +3,7 @@
 <div id="newscontainer">
   <div id="newsTitleList">
     <div class="alert alert-primary" role="alert">
-      <span style="color: grey; font-weight: bolder; text-decoration: underline"
+      <span style="color: grey; font-weight: bolder; text-decoration: underline;"
         >Latest News of Tunisia
       </span>
     </div>
@@ -33,13 +33,7 @@
   </div>
   
   <div>
-    <!-- <div id="wrapper">
-      <span *ngFor="let oneNews of latestLocal">
-        <div>
-          <app-onenews [oneNews]="oneNews"></app-onenews>
-        </div>
-      </span>
-    </div> -->
+ 
     <app-latest-inter></app-latest-inter>
   </div>
 
@@ -64,7 +58,7 @@
 
   <div>
     <div id="wrapper">
-      <span *ngFor="let oneNews of latestLocal">
+      <span *ngFor="let oneNews of latestEconomy">
         <div>
           <app-onenews [oneNews]="oneNews"></app-onenews>
         </div>
@@ -91,7 +85,7 @@
   </div>
   <div>
     <div id="wrapper">
-      <span *ngFor="let oneNews of latestLocal">
+      <span *ngFor="let oneNews of latestSport">
         <div>
           <app-onenews [oneNews]="oneNews"></app-onenews>
         </div>
@@ -122,7 +116,7 @@
 
   <div>
     <div id="wrapper">
-      <span *ngFor="let oneNews of latestLocal">
+      <span *ngFor="let oneNews of latestArt">
         <div>
           <app-onenews [oneNews]="oneNews"></app-onenews>
         </div>
@@ -143,7 +137,6 @@
 </div>
 <br />
 
-<div id="internationalnews"></div>
 
 <br /><br />
 

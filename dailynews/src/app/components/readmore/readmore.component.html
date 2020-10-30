@@ -1,10 +1,25 @@
 <app-navbar></app-navbar>
-<br><br>
-<h1>{{tt}}</h1>
-<br><br><br><br>
-<img src={{url}}/>
-<br><br>
-<p>{{text}}</p>
+<div id ="categoryConatainer">
+   <p style="color: grey; font-weight: bolder; text-decoration: underline;"
+    >{{category}}
+</p>
 
-<br><br><br>
-{{object}}
+</div>
+<div id="imageContainer">
+<img src={{url}}/>
+</div>
+<div id="dateContainer">
+  <p>Add {{date}}@{{time}}</p>
+</div>
+<div id="titleContainer">
+  <h1>{{tt}}</h1>
+</div>
+<div id="textContainer">
+<p style="font-size:20px;font-style:italic;font-weight:bold;font-family:Times New Roman, Times, serif;">{{text}}</p>
+</div>
+
+
+
+
+<!-- <h3>{{date}}</h3> -->
+

@@ -1,9 +1,9 @@
 .jumbotron {
-    
+    position:relative;
     /* background-color:#071675;  */
     background-color :#B0E0E6 ; 
     color: #ffffff;
-    height:150px;
+    height:100px;
     width:100%;
     top:0px;
   }
@@ -81,3 +81,4 @@
   li:active {
     color:red;
 }
+

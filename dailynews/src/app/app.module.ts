@@ -24,6 +24,9 @@ import { OnenewsComponent } from './components/onenews/onenews.component';
 import { LatestInterComponent } from './components/latest-inter/latest-inter.component';
 import { ReadmoreComponent } from './components/readmore/readmore.component';
 import { StickyHeaderDirective } from './sticky-header.directive';
+import { AddNewsComponent } from './components/add-news/add-news.component';
+import { LatestNewsComponent } from './components/latest-news/latest-news.component';
+
 
 
 //import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -49,6 +52,12 @@ import { StickyHeaderDirective } from './sticky-header.directive';
     ReadmoreComponent,
    
     StickyHeaderDirective,
+   
+    AddNewsComponent,
+   
+    LatestNewsComponent,
+   
+    
    
   ],
   imports: [

@@ -7,17 +7,17 @@ let path = require('path');
 let cors = require('cors')
 route.use(cors())
 
-// route.post("/creates",(req,res)=>{
-//     let interNews={
-//         image:req.body.image,
-//         title:req.body.title,
-//         text:req.body.text
-//     };
-//    NationalNews.create(interNews).then((addedNews)=>{
-//       console.log('g',interNews)
-//    });
+route.post("/creates",(req,res)=>{
+    let interNews={
+        image:req.body.image,
+        title:req.body.title,
+        text:req.body.text
+    };
+   NationalNews.create(interNews).then((addedNews)=>{
+      console.log('g',interNews)
+   });
 
-// });
+});
 
 route.get("/creates",(req,res)=>{
     NationalNews.find({},(err,news)=>{
@@ -47,18 +47,18 @@ let upload = multer({
     storage:storage
 });
 
-route.post("/creates",upload.single("image"),(req,res)=>{
+// route.post("/creates",upload.single("image"),(req,res)=>{
     
     
-        let interNews = {
-            image:req.file.filename,
-            title:req.body.title,
-            text:req.body.text
-        }
-        NationalNews.create(interNews).then((data)=>{
-            console.log(data)
-        })
+//         let interNews = {
+//             image:req.file.filename,
+//             title:req.body.title,
+//             text:req.body.text
+//         }
+//         NationalNews.create(interNews).then((data)=>{
+//             console.log(data)
+//         })
     
-});
+// });
 
 module.exports=route;

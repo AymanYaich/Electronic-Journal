@@ -29,14 +29,16 @@ export class ReadmoreComponent  implements OnInit {
  date:any;
  time:any;
  category:any;
- object:any;
+ wordDate:any;
  
 
   ngOnInit(){
+    
     this.getTitle();
     this.getImage();
     this.getText();
-    this.getDate()   
+    this.getDate();
+    this.word()   
     }
  
    getTitle(){
@@ -60,12 +62,17 @@ export class ReadmoreComponent  implements OnInit {
    };
 
    getDate(){
-     this._dateInteraction.observerDate.subscribe((obj)=>{
-       this.object=obj
+     this._dateInteraction.observerDate.subscribe((datas)=>{
+       this.wordDate=datas
      })
    }
      
-
+  word(){
+    let array=this.wordDate.split(" ")
+    this.date=array[0]
+    this.time=array[1]
+    this.category=array[2]
+  }
      
 }
 

@@ -15,7 +15,7 @@ export class LatestInterComponent implements OnInit {
     this.interUpdate()
   }
   interUpdate(){
-    this.http.get("http://localhost:3000/national/creates").subscribe((datas)=>{
+    this.http.get("http://localhost:3000/international/creates").subscribe((datas)=>{
       this.latest=datas;
       this.latestInter[0]=this.latest[this.latest.length-1];
       this.latestInter[1]=this.latest[this.latest.length-2];

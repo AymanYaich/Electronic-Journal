@@ -6,6 +6,8 @@ let port = process.env.PORT || 3000;
 let nationalNews= require('../dailynews/backend_data/routes/national')
 let interNews = require ('../dailynews/backend_data/routes/international.js')
 let sportNews = require ('../dailynews/backend_data/routes/sportNews');
+let economyNews = require('../dailynews/backend_data/routes/economy');
+let artNews = require ('../dailynews/backend_data/routes/art')
 let cors = require('cors');
 let bcryptjs = require ('bcryptjs');
 let jwt = require ('jsonwebtoken');
@@ -44,13 +46,23 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 app.use(passport.initialize());
-//app.use('/api', routesApi);
 
-//app.use(favicon())
+
+
+app.use((req, res, next)=> {
+   
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        next();
+    });
+
+    "Endpoints Configuration"
 app.use("/international",interNews)
 app.use("/national",nationalNews)
 app.use("/sport",sportNews)
-
+app.use("/economy",economyNews)
+app.use("/art",artNews)
 
 // app.use(function (err, req, res, next) {
 //     if (err.name === 'UnauthorizedError') {

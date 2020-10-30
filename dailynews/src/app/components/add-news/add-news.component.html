@@ -1,0 +1,38 @@
+<h1 style="color: red; font-weight: bolder">{{categoryTitle}} News</h1>
+<form (ngSubmit)="sendTo()" action="/Upload" method="post" enctype="multipart/form-data">
+    <label for="file">Upload the photo of the {{oneEdit}}-news</label>
+    <br />
+    <!-- <input
+      #fileInput
+      type="file"
+      id="myFile"
+      
+      name="file"
+      (change)="fileChangeEvent($event.target.files)"
+    /> -->
+    <input type="text" id="image" name="image" [(ngModel)]="imageUrl"/>
+  <br /><br />
+    <br /><br />
+    <label for="Title">Add the title of the news</label>
+    <br />
+    <input
+      type="text"
+      id="Title"
+      name="Title"
+      [(ngModel)]="title"
+      placeholder="title"
+    />
+    <br /><br />
+    <label for="TextNews">Add news text</label>
+    <br />
+    <textarea
+      id="TextNews"
+      name="TextNews"
+      [(ngModel)]="textNews"
+      rows="4"
+      cols="50"
+    >
+    </textarea>
+    <br />
+    <button type="submit">Add News</button>
+  </form>

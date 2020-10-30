@@ -7,7 +7,7 @@ let interNewsSchema = new mongoose.Schema({
     text:String,
     category:{
         type:String,
-        default:"National"
+        default:"International"
     },
     created_at    : {
          type: Date,
