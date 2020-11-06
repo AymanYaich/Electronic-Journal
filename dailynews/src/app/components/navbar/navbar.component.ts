@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {  interval , Subscription,Observable } from 'rxjs'
 import { WeatherService } from '../../services/weather.service';
 import { AuthService } from '../../../../auth2/shared/auth.service'
- 
+import { TypeOfService } from '../../services/type-of.service' 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -19,8 +19,9 @@ export class NavbarComponent implements OnInit {
   dataWeather:any;
   currentUser:any;
   ifLogged:boolean=false
+  category:String=""
   user:{};
-  constructor( private weatherservice:WeatherService  ,private authServ :AuthService){ }
+  constructor( private weatherservice:WeatherService  ,private authServ :AuthService ,private typeOfServ : TypeOfService){ }
 
   private updateSubscription: Subscription;
   ngOnInit(): void {
@@ -56,6 +57,22 @@ export class NavbarComponent implements OnInit {
     this.authServ.doLogout()
     console.log('jbjkj',this.ifLogged)
   }
+
+nationalType(){
+  this.typeOfServ.newsCategory='national'
+}
+InternationalType(){
+  this.typeOfServ.newsCategory='international'
+}
+economyType(){
+  this.typeOfServ.newsCategory='economy'
+}
+sportType(){
+  this.typeOfServ.newsCategory='sport'
+}
+artType(){
+  this.typeOfServ.newsCategory='art'
+}
 }
 // getUserLocation(){
 //   if ('geolocation' in navigator){

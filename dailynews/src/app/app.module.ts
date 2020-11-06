@@ -13,11 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { InternationalnewsComponent } from './components/internationalnews/internationalnews.component';
-import { NationalnewsComponent } from './components/nationalnews/nationalnews.component';
-import { EconomynewsComponent } from './components/economynews/economynews.component';
-import { SportnewsComponent } from './components/sportnews/sportnews.component';
-import { ArtnewsComponent } from './components/artnews/artnews.component';
+
 import { CommonModule } from '@angular/common'
 
 import { OnenewsComponent } from './components/onenews/onenews.component';
@@ -32,6 +28,7 @@ import { LatestcontentsComponent } from './components/latestcontents/latestconte
 import { LoginContentComponent } from './components/login-content/login-content.component';
 import { SignupContentComponent } from './components/signup-content/signup-content.component';
 import { ReadmoreContentComponent } from './components/readmore-content/readmore-content.component';
+import { DetailnewsComponent } from './components/detailnews/detailnews.component';
 
 
 
@@ -44,36 +41,19 @@ import { ReadmoreContentComponent } from './components/readmore-content/readmore
     NavbarComponent,
     LoginComponent,
     SignupComponent,
-  
-    InternationalnewsComponent,
-    NationalnewsComponent,
-    EconomynewsComponent,
-    SportnewsComponent,
-    ArtnewsComponent,
-   
     OnenewsComponent,
-   
     LatestInterComponent,
-   
     ReadmoreComponent,
-   
     StickyHeaderDirective,
-   
-    AddNewsComponent,
-   
-    LatestNewsComponent,
-   
-    ProfileComponent,
-   
-    FooterComponent,
-   
-    LatestcontentsComponent,
-   
-    LoginContentComponent,
-   
+   AddNewsComponent,
+   LatestNewsComponent,
+   ProfileComponent,
+   FooterComponent,
+   LatestcontentsComponent,
+   LoginContentComponent,
     SignupContentComponent,
-   
     ReadmoreContentComponent,
+   DetailnewsComponent,
    
  
    
@@ -89,7 +69,7 @@ import { ReadmoreContentComponent } from './components/readmore-content/readmore
     FormsModule,
     ReactiveFormsModule,
     CommonModule
-    //MDBBootstrapModule
+    
   ],
   providers: [
     {
