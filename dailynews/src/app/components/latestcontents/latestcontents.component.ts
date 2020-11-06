@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import {StateOneNewsService} from '../../services/state-one-news.service'
+import { TypeOfService } from '../../services/type-of.service'
+import { Router }   from '@angular/router'
 @Component({
   selector: 'app-latestcontents',
   templateUrl: './latestcontents.component.html',
@@ -11,8 +13,12 @@ export class LatestcontentsComponent implements OnInit {
   latestSport:any=[];
   latestArt:any=[];
   latestEconomy:any=[];
+  latestInter:any=[];
   dataAll:any=[];
-  constructor(public http:HttpClient , public stateServ : StateOneNewsService) { }
+  constructor(public http:HttpClient , 
+    public stateServ : StateOneNewsService,
+    public typeOfServ : TypeOfService,
+    public router :Router) { }
 
   ngOnInit(): void {
     this.stateServ.changeDetail2()
@@ -20,6 +26,7 @@ export class LatestcontentsComponent implements OnInit {
     this.getLatestSport()
     this.getLatestEconomy()
     this.getLatestArt()
+    this.getLatestInter()
       }
     
       getLatestLocal(){
@@ -62,7 +69,39 @@ export class LatestcontentsComponent implements OnInit {
             
            })
         }
-      
+        getLatestInter(){
+          this.http.get('http://localhost:3000/international/creates').subscribe((datas)=>{
+            this.dataAll=datas;
+            this.latestInter[0]=this.dataAll[this.dataAll.length-1];
+            this.latestInter[1]=this.dataAll[this.dataAll.length-2];
+            this.latestInter[2]=this.dataAll[this.dataAll.length-3];
+            
+           })
+        }
+     nationalType(){
+       this.typeOfServ.newsCategory="national"
+       this.router.navigate(["/detail-news"])
+     }
+     internationalType(){
+      this.typeOfServ.newsCategory="international"
+      this.router.navigate(["/detail-news"])
+
+     }   
+     economyType(){
+      this.typeOfServ.newsCategory="economy"
+      this.router.navigate(["/detail-news"])
+
+     }   
+     sportType(){
+      this.typeOfServ.newsCategory="sport"
+      this.router.navigate(["/detail-news"])
+
+     }
+     artType(){
+      this.typeOfServ.newsCategory="art"
+      this.router.navigate(["/detail-news"])
+
+     }       
   }
 
 

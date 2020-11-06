@@ -1,5 +1,13 @@
 <app-navbar></app-navbar>
 <br><br>
+<div id="newsTitleList">
+    <div class="alert alert-primary" role="alert">
+      <span style="color: grey; font-weight: bolder; "
+        >{{category}}
+      </span>
+    </div>
+  </div>
+
 <div>
     <div *ngFor="let oneNews of listNews">
     <app-onenews [oneNews]="oneNews"></app-onenews>

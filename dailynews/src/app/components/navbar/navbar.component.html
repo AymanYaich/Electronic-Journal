@@ -94,15 +94,15 @@
                 >
               </li>
               <div id="connectLogo">
-                <div *ngIf="!ifLogged">
+                <div *ngIf="!ifLogged"><a [routerLink]="['', 'log-in']">
                   <div>
-                    <a [routerLink]="['', 'log-in']">
-                      <img id="photoConnect" src="assets/connectLogo.png" />
-                    </a>
+                     <img id="photoConnect" src="assets/connectLogo.png" />
+                    
                   </div>
-
+                 </a>
+                 
                   <div id="signInText">
-                    <p>Connect</p>
+                    <p>My account</p>
                   </div>
                 </div>
                 <div *ngIf="ifLogged">

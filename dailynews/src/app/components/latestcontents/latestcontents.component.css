@@ -16,13 +16,14 @@ top:700px;
 
 #newsTitleList *{
 position:relative;
-width: 961px;
+width: 994px;
 border-radius:0 !important 
 }
-#goToAll {
+#goToAll *{
 position:relative;
-left:860px;
-width:150px;
+left:872px;
+width:120px;
+border-radius:0 !important 
 }
 
 

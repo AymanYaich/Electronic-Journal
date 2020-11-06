@@ -19,7 +19,8 @@
   
     <br />
     <div id="goToAll">
-      <div class="d-inline p-2 bg-primary text-white"><a>More news ...</a></div>
+      <!-- <div class="d-inline p-2 bg-primary text-white"><a [routerLink]="['','detail-news']" (click)="nationalType()">More news ...</a></div> -->
+      <button type="button" class="btn btn-secondary" (click)="nationalType()">More news...</button>
     </div>
     <br /><br />
     <div id="newsTitleList">
@@ -29,21 +30,19 @@
         </span>
       </div>
     </div>
-    
     <div>
-   
-      <app-latest-inter></app-latest-inter>
-    </div>
-  
-   
-    <br />
-    <div id="goToAll">
-      <div
-        [routerLink]="['', 'inter-news']"
-        class="d-inline p-2 bg-primary text-white"
-      >
-        <a>More news...</a>
+      <div id="wrapper">
+        <span *ngFor="let oneNews of latestInter">
+          <div>
+            <app-onenews [oneNews]="oneNews"></app-onenews>
+          </div>
+        </span>
       </div>
+    </div>
+    
+ <br />
+    <div id="goToAll">
+     <button type="button" class="btn btn-secondary" (click)="internationalType()">More news...</button>
     </div>
     <br /><br />
     <div id="newsTitleList">
@@ -66,12 +65,7 @@
   
     <br />
     <div id="goToAll">
-      <div
-        [routerLink]="['', 'economy-news']"
-        class="d-inline p-2 bg-primary text-white"
-      >
-        <a>More news ...</a>
-      </div>
+      <button type="button" class="btn btn-secondary" (click)="economyType()">More news...</button>
     </div>
     <br /><br />
     <div id="newsTitleList">
@@ -93,14 +87,7 @@
   
     <br />
     <div id="goToAll">
-      <a
-        ><div
-          [routerLink]="['', 'sport-news']"
-          class="d-inline p-2 bg-primary text-white"
-        >
-          <a>More news ...</a>
-        </div></a
-      >
+      <button type="button" class="btn btn-secondary" (click)="sportType()">More news...</button>
     </div>
   
     <br /><br />
@@ -124,12 +111,6 @@
   
     <br />
     <div id="goToAll">
-      <div
-        [routerLink]="['', 'art-news']"
-        class="d-inline p-2 bg-primary text-white"
-      >
-        <a>More news ...</a>
-      </div>
-    </div>
+      <button type="button" class="btn btn-secondary" (click)="artType()">More news...</button>
     <br /><br />
   </div>

@@ -112,7 +112,7 @@ li:active {
 
 #connectLogo {
   position: absolute;
-  left: 1200px;
+  left: 1180px;
   width: 60px;
   height: 60px;
 }
@@ -122,6 +122,7 @@ li:active {
   width: 47px;
   height: 47px;
   top: -5px;
+  left:-17px;
   float: left;
   /* filter: invert(92%) sepia(18%) saturate(3%) hue-rotate(335deg) brightness(92%) contrast(99%); */
   filter: invert(88%) sepia(10%) saturate(6496%) hue-rotate(305deg) brightness(130%) contrast(129%);
@@ -130,7 +131,7 @@ li:active {
 #signInText {
   position: absolute;
   color: wheat;
-  right: 75px;
+  right: -45px;
   top: 7px
 }
 
