@@ -7,7 +7,10 @@ let nationalNews= require('../dailynews/backend_data/routes/national')
 let interNews = require ('../dailynews/backend_data/routes/international.js')
 let sportNews = require ('../dailynews/backend_data/routes/sportNews');
 let economyNews = require('../dailynews/backend_data/routes/economy');
-let artNews = require ('../dailynews/backend_data/routes/art')
+let artNews = require ('../dailynews/backend_data/routes/art');
+let user = require ( '../dailynews/backend_data/routes/register.js')
+let login = require ('../dailynews/backend_data/routes/login')
+let regions = require('../dailynews/backend_data/routes/regions.js')
 let cors = require('cors');
 let bcryptjs = require ('bcryptjs');
 let jwt = require ('jsonwebtoken');
@@ -15,7 +18,7 @@ let path =  require ('path');
 let logger = require ('morgan');
 let cookieParser = require ('cookie-parser');
 let favicon = require ('serve-favicon')
-let routesApi = require('./api/routes/routes.js')
+
 let passport = require ('passport');
 let InterNews = require ('../dailynews/backend_data/models/interNews.js')
 
@@ -63,6 +66,9 @@ app.use("/national",nationalNews)
 app.use("/sport",sportNews)
 app.use("/economy",economyNews)
 app.use("/art",artNews)
+app.use("/register",user)
+app.use("/login",login)
+app.use("/regions",regions)
 
 // app.use(function (err, req, res, next) {
 //     if (err.name === 'UnauthorizedError') {

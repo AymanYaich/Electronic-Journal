@@ -24,7 +24,7 @@ route.get("/creates",(req,res)=>{
           res.json(`Can't find the data`)
       }else {
           res.status(200).json(news);
-          console.log(news)
+          
       }
   })
 })

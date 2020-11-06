@@ -9,6 +9,15 @@
     background-color: whitesmoke;
 
 }
+#newscomponentdetail{
+    position:relative;
+    border:solid grey;
+    width:900px;
+    height: 320px;
+    border-width:0 0 2px 0;
+    border-style:none none solid none;
+    background-color: whitesmoke;
+}
 #addedAt{
     position:absolute;
     top :190px;

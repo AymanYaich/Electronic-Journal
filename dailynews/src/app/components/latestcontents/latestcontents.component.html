@@ -1,0 +1,135 @@
+<div id="newscontainer">
+    <div id="newsTitleList">
+      <div class="alert alert-primary" role="alert">
+        <span style="color: grey; font-weight: bolder; "
+          >Latest news of Tunisia
+        </span>
+      </div>
+    </div>
+  
+    <div>
+      <div id="wrapper">
+        <span *ngFor="let oneNews of latestLocal">
+          <div>
+            <app-onenews [oneNews]="oneNews"></app-onenews>
+          </div>
+        </span>
+      </div>
+    </div>
+  
+    <br />
+    <div id="goToAll">
+      <div class="d-inline p-2 bg-primary text-white"><a>More news ...</a></div>
+    </div>
+    <br /><br />
+    <div id="newsTitleList">
+      <div class="alert alert-primary" role="alert">
+        <span style="color: grey; font-weight: bolder;"
+          >Latest news of the world
+        </span>
+      </div>
+    </div>
+    
+    <div>
+   
+      <app-latest-inter></app-latest-inter>
+    </div>
+  
+   
+    <br />
+    <div id="goToAll">
+      <div
+        [routerLink]="['', 'inter-news']"
+        class="d-inline p-2 bg-primary text-white"
+      >
+        <a>More news...</a>
+      </div>
+    </div>
+    <br /><br />
+    <div id="newsTitleList">
+      <div class="alert alert-primary" role="alert">
+        <span style="color: grey; font-weight: bolder;"
+          >Latest news of the economy</span
+        >
+      </div>
+    </div>
+  
+    <div>
+      <div id="wrapper">
+        <span *ngFor="let oneNews of latestEconomy">
+          <div>
+            <app-onenews [oneNews]="oneNews"></app-onenews>
+          </div>
+        </span>
+      </div>
+    </div>
+  
+    <br />
+    <div id="goToAll">
+      <div
+        [routerLink]="['', 'economy-news']"
+        class="d-inline p-2 bg-primary text-white"
+      >
+        <a>More news ...</a>
+      </div>
+    </div>
+    <br /><br />
+    <div id="newsTitleList">
+      <div class="alert alert-primary" role="alert">
+        <span style="color: grey; font-weight: bolder;"
+          >Latest news of the sport</span
+        >
+      </div>
+    </div>
+    <div>
+      <div id="wrapper">
+        <span *ngFor="let oneNews of latestSport">
+          <div>
+            <app-onenews [oneNews]="oneNews"></app-onenews>
+          </div>
+        </span>
+      </div>
+    </div>
+  
+    <br />
+    <div id="goToAll">
+      <a
+        ><div
+          [routerLink]="['', 'sport-news']"
+          class="d-inline p-2 bg-primary text-white"
+        >
+          <a>More news ...</a>
+        </div></a
+      >
+    </div>
+  
+    <br /><br />
+    <div id="newsTitleList">
+      <div class="alert alert-primary" role="alert">
+        <span style="color: grey; font-weight: bolder;"
+          >Latest news of the art</span
+        >
+      </div>
+    </div>
+  
+    <div>
+      <div id="wrapper">
+        <span *ngFor="let oneNews of latestArt">
+          <div>
+            <app-onenews [oneNews]="oneNews"></app-onenews>
+          </div>
+        </span>
+      </div>
+    </div>
+  
+    <br />
+    <div id="goToAll">
+      <div
+        [routerLink]="['', 'art-news']"
+        class="d-inline p-2 bg-primary text-white"
+      >
+        <a>More news ...</a>
+      </div>
+    </div>
+    <br /><br />
+  </div>

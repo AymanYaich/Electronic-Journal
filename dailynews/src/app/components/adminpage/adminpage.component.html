@@ -60,13 +60,25 @@
 
 <br /><br /><br />
 
-
-<div id="NewsEditionContainer" >
+<div id="NewsEditionContainer">
   <div>
     <span *ngFor="let oneEdit of dataBase">
       <app-add-news [oneEdit]="oneEdit"></app-add-news>
     </span>
   </div>
-  
-  
+  <br /><br /><br />
+  <button (click)="regionTo()">Regions Settings</button>
+  <div *ngIf="ifRegion">
+    <form (ngSubmit)="addRegion()">
+      <label for="region">Add Region</label>
+      <input type=text id="region" placeholder="add region" [(ngModel)]="region"
+      [ngModelOptions]="{standalone: true}">
+      <label for="photo">Add Region</label>
+      <input type=text id="photo" placeholder="add url photo"
+      [(ngModel)]="photoRegion"[ngModelOptions]="{standalone: true}">
+      <button type="submit">Add to the list</button>
+      {{regionList}}
+    </form>
+    
+  </div>
 </div>

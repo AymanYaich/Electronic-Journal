@@ -4,12 +4,14 @@ import { Router } from '@angular/router'
 import { ImageSendService } from '../../services/image-send.service'
 import { TextInterService } from '../../services/text-inter.service'
 import { DateService } from '../../services/date.service'
+import {StateOneNewsService} from '../../services/state-one-news.service'
 @Component({
   selector: 'app-onenews',
   templateUrl: './onenews.component.html',
   styleUrls: ['./onenews.component.css']
 })
 export class OnenewsComponent implements OnInit {
+  detailState:boolean;
   date:any;
   time:any;
   today:any;
@@ -30,11 +32,14 @@ export class OnenewsComponent implements OnInit {
               private _dataInter:DataInteService,
               private _imageInter: ImageSendService,
               private _textInter: TextInterService,
-              private _dateInteraction : DateService) { }
+              private _dateInteraction : DateService,
+              private stateServ : StateOneNewsService) { }
 
   ngOnInit(): void {
+    this.detailState=this.stateServ.detail
     this.addedAt();
     
+    console.log(this.detailState)
   }
    addedAt(){
      let word =this.oneNews.created_at
@@ -42,10 +47,7 @@ export class OnenewsComponent implements OnInit {
       this.date = word.slice(0,10);
       this.time = word.slice(11,16)
       
-      //let dayDigit= new Date(parseInt(word.slice(0,4)),parseInt(word.slice(5,6)),parseInt(word.slice(8,9))).getDay();
-      //this.today=this.weekDays[dayDigit]
-     
-    } 
+  } 
     sendTo(){
       this._dataInter.sendTitle(this.oneNews.title)
     }
@@ -61,8 +63,9 @@ export class OnenewsComponent implements OnInit {
     }
     readMore(){
       
-      
+      //this.router.navigate(['']);
       this.router.navigate(['/news'],{queryParams:this.oneNews.title})
+      alert('hello click!!!')
       this.sendTo();
       this.sendImgTo();
       this.sendTextTo();

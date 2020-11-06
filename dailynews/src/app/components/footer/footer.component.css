@@ -1,0 +1,40 @@
+/* .footerComponent {
+    position:relative;
+    background-color: #B0E0E6;
+    color: #ffffff;
+    height: 150px;
+    width: 100%;
+    
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+   */
+   #footer{
+    position:relative;
+    
+    height: 150px;
+    width: 100%;
+    
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+   }
+   #top{
+     height:30px;
+     background-color:grey ;
+    margin-bottom:0px;
+    margin-top:0px;
+   }
+   #bottom{
+    background-color: #B0E0E6;
+    height: 150px;
+    margin-bottom:0px;
+    margin-top:0px;
+    margin-right:0px;
+   }
+   img{
+     position:absolute;
+     top:50px;
+     left:20px;
+     height:120px;
+     width:120px;
+   }

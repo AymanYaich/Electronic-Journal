@@ -1,7 +1,9 @@
+<div id="newsContainer">
+  <div *ngIf="!detailState">
 <div id="newscomponent">
     <img  src={{oneNews.image}} />
     <div id="addedAt">
-     <p>  add  {{date}} @ {{time}} GMT   </p>
+     <p>  {{date}} @ {{time}} GMT   </p>
     </div>
     <div id="onenewsTitle">
     <p>{{oneNews.title}}</p>
@@ -13,7 +15,26 @@
     <div id="buttonReadMore">
     <button type="button" class="btn btn-secondary" (click)="readMore()">Read more..</button>
   </div>
-    <!-- <p></p>
-    <br> -->
+   </div>
   </div>
-  
+  <div *ngIf="detailState">
+    <div id="newscomponentdetail">
+    <div id="newscomponent">
+      <img  src={{oneNews.image}} />
+      <div id="addedAt">
+       <p>  {{date}} @ {{time}} GMT   </p>
+      </div>
+      <div id="onenewsTitle">
+      <p>{{oneNews.title}}</p>
+    </div>
+       <div id="onenewsDescription">
+      <p >{{oneNews.text.slice(0,110)}}<span style="font-weight: bold">...</span></p>
+    </div>
+      
+      <div id="buttonReadMore">
+      <button type="button" class="btn btn-secondary" (click)="readMore()">Read more..</button>
+    </div>
+     </div>
+    </div>
+  </div>
+  </div>

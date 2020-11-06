@@ -1,0 +1,29 @@
+#Container{
+    position :relative;
+    
+    left:400px;
+    width:30%;
+    height:530px;
+    background-color:#B0E0E6;
+    border-radius: 2%;
+    margin-top:0px;
+}
+img{
+   position:absolute;
+   top:20px;
+   left:120px;
+   height:100px;
+   width:100px
+
+}
+#loginContainer{
+    position : absolute;
+    top:130px;
+    left:50px;
+    width:70%
+}
+#Register{
+    position:absolute;
+    top:390px;
+    left:50px;
+}

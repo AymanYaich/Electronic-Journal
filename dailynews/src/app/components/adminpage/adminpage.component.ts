@@ -19,48 +19,23 @@ export class AdminpageComponent implements OnInit {
   sportStatus:boolean=false;
   artStatus:boolean=false;
   statusVal:String="";
-  dataBase:any=[]
- // upload:any;
+  dataBase:any=[];
+  ifRegion:boolean=false;
+  region:String="";
+  photoRegion:String="";
+  regionList:any=[]
   constructor(public http: HttpClient ) {}
   
   ngOnInit(): void {
-  
+    this.getRegions()
+  console.log(this.regionList)
     
   }
  
-  interNational() {
-    let news = {
-      image: this.imageUrl,
-      title: this.title,
-      text: this.textNews,
-    };
-    this.http.post('http://localhost:3000/international/creates', news).subscribe((data) => {
-         console.log('button Submit works hello!!!',data );
-    });
-  };
+ 
 
-    national(){
-      let news = {
-        image:this.imageUrl,
-        title:this.title,
-        text:this.textNews
-      };
-      this.http.post("http://localhost:3000/national/creates",news).subscribe(()=>{
-        this.ngOnInit()
-      })
-    }
-   
-    EconomySubmit(){
-      
-      let fd = new FormData();
-      fd.append('image',this.imageUrl);
-      fd.append('title',this.title);
-      fd.append('text',this.textNews);
-      console.log(this.imageUrl)
-      this.http.post("http://localhost:3000/sport/creates",fd).subscribe(()=>{
-        this.ngOnInit()
-      })
-    }
+    
+    
   
       nationalEdit(){
          this.nationalStatus=true;
@@ -128,5 +103,26 @@ export class AdminpageComponent implements OnInit {
       }
       //return this.statusVal;
       console.log("value is ",this.statusVal)
+    }
+    regionTo(){
+      this.ifRegion=true;
+    }
+    addRegion(){
+      let newRegion={
+         name:this.region,
+         photo:this.photoRegion,
+         advertise:""
+      }
+      console.log(newRegion)
+      this.http.post("http://localhost:3000/regions/creates",newRegion).subscribe(()=>{
+        this.ngOnInit
+      })
+      window.location.reload();
+    }
+    getRegions(){
+      this.http.get("http://localhost:3000/regions/creates").subscribe((datas)=>{
+        this.regionList=datas
+        this.ngOnInit()
+      })
     }
 }

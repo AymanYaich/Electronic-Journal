@@ -1,12 +1,23 @@
+<div class="navAll">
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <div class="dateandtime">
       <div class="day">
         <p div="textDay">
-          <span style="font-style: italic; font-weight: bold;font-size: 12px">Tunis,</span>
+          <span style="font-style: italic; font-weight: bold;font-size: 12px">Tunis</span>
           
           <span style="font-size: 12px; font-style: italic; font-weight: bold">
-            {{ this.fullToday }}</span
+            {{ this.today}} ,</span
+          >
+        </p>
+      </div>
+
+      <div class="date">
+        <p div="textDay">
+          
+          
+          <span style="font-size: 12px; font-style: italic; font-weight: bold">
+            {{ this.date}}</span
           >
         </p>
       </div>
@@ -32,9 +43,12 @@
      
      
   </div>
-  <div id="nav-horizantal">
+</div>
+<div class="stickyPosition">
+  <div class="nav-horizantal">
   <div class="col-md-6">
      <div id="texthorizantal">
+       <div id="nav">
     <ul class="nav red-gradient py-4 mb-4 font-weight-bold z-depth-1">
       <li class="nav-item">
         <a class="nav-link active white-text" [routerLink]="['','national-news']"><span style="color:wheat">National</span></a>
@@ -51,12 +65,35 @@
       <li class="nav-item">
         <a class="nav-link red-text" [routerLink]="['','art-news']"><span style="color:wheat">Art</span></a>
       </li>
-      
+      <div id="connectLogo" >
+        <div *ngIf="!ifLogged">
+        <div>
+        <a [routerLink]="['','log-in']">
+        <img id="photoConnect" src="assets/connectLogo.png"/>
+      </a>
+    </div>
+   
+      <div id="signInText">
+        <p>Connect</p>
+      </div>
+    </div>
+     <div *ngIf="ifLogged">
+      <h4>{{user.firstName}} {{user.lastName}}</h4>
+      <div id="logout">
+      <button (click)="logout()">LogOut</button>
+    </div>
+     </div>
+    
+      </div>
+      <div>
+     
+    </div>
     </ul>
+    </div>
   </div>
    
   </div>
  
 </div>
-
+</div>
 </div>

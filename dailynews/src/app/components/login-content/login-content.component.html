@@ -1,0 +1,55 @@
+<div id="Container">
+  <a [routerLink]="['']"> <img src="assets/logoJournal.png" /></a>
+  <div id="loginContainer">
+    <form (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="email"
+          ><span style="color: #0275d8; font-weight: bold; font-size: 16px"
+            >Email address</span
+          ></label
+        >
+        <input
+          type="email"
+          class="form-control"
+          id="Email"
+          placeholder="name@example.com"
+          [(ngModel)]="email"
+        />
+        <br />
+        <label for="password"
+          ><span style="color: #0275d8; font-weight: bold; font-size: 16px"
+            >Password</span
+          ></label
+        >
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          [(ngModel)]="password"
+          placeholder="password"
+        />
+        <br />
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </div>
+    </form>
+    <hr />
+    <br />
+  </div>
+  <div id="Register">
+    <p>
+      <span
+        style="
+          color: #0275d8;
+          font-weight: bold;
+          font-size: 16px;
+          text-decoration: underline;
+        "
+        >Don't have an account?</span
+      >
+    </p>
+
+    <button type="button" class="btn btn-secondary" (click)="goToSignUp()">
+      Register Now
+    </button>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+<div id="Container">
+    <a [routerLink]="['']"> <img src="assets/logoJournal.png" /></a>
+    <div id="SignUpContainer">
+      <form>
+        <div class="form-group">
+          <label for="firstName"><p>First Name</p></label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            placeholder="Please enter your firstname "
+            [(ngModel)]="firstName"
+            [ngModelOptions]="{ standalone: true }"
+          />
+          <br>
+          <label for="lastName"><p>Last Name</p></label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            placeholder="Please enter your lastname "
+            [(ngModel)]="lastName"
+            [ngModelOptions]="{ standalone: true }"
+          />
+          <br>
+          <label for="select"><p>Select your region</p></label>
+          
+          <select
+            name="Select your region "
+            class="form-control"
+            id="select"
+            [(ngModel)]="city"
+            
+            [ngModelOptions]="{standalone: true}"
+          >
+         
+            <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+           
+          </select>
+          <br>
+          <label for="email"><p>Email</p></label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Please enter your email @ "
+            [(ngModel)]="email"
+            [ngModelOptions]="{ standalone: true }"
+          />
+          <br>
+          <label for="password"><p>Password</p></label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Please type your password "
+            [(ngModel)]="password"
+            [ngModelOptions]="{ standalone: true }"
+          />
+          <br>
+          <label for="confirm-password"><p>Confirm Password</p></label>
+          <input
+            type="password"
+            class="form-control"
+            id="confirm-password"
+            placeholder="Please retype your password "
+            [(ngModel)]="password"
+            [ngModelOptions]="{ standalone: true }"
+          />
+          <br><br>
+          <button type="button" class="btn btn-primary">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

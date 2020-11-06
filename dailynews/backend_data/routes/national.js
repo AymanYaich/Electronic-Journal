@@ -25,7 +25,7 @@ route.get("/creates",(req,res)=>{
             res.json(`Can't finf the data`)
         }else {
             res.status(200).json(news);
-            console.log(news)
+            
         }
     })
 })

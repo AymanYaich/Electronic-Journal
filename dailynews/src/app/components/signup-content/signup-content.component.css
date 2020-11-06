@@ -1,0 +1,27 @@
+#Container {
+    position: relative;
+  
+    left: 400px;
+    width: 40%;
+    height: 900px;
+    background-color: #B0E0E6;
+    border-radius: 2%;
+  }
+  img{
+      position:absolute;
+     top:20px;
+     left:180px;
+     height:100px;
+     width:100px
+  }
+  #SignUpContainer{
+   position: absolute;
+   top:140px;
+   width:80%;
+   left:40px
+  }
+  p{
+    color:#0275d8; 
+    font-weight: bold;
+    font-size: 16px ;
+  }

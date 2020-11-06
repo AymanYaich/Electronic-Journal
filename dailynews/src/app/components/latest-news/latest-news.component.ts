@@ -13,6 +13,7 @@ export class LatestNewsComponent implements OnInit {
   constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
+    this.newsUpdate()
   }
   newsUpdate(){
     this.http.get("http://localhost:3000/international/creates").subscribe((datas)=>{

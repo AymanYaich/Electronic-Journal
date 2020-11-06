@@ -1,3 +1,18 @@
 <app-navbar></app-navbar>
 <br><br>
-<h1>Sport news Loading.....!</h1>
+<!-- <div id="Container">
+    <div *ngFor="let one of sportList">
+        <div id="onenewsContainer">
+        <div id="imgContainer">
+        <img src={{one.image}}>
+    </div>
+</div if ="dateContainer">  
+        <p>{{date}}</p>
+    </div>
+</div> -->
+<div>
+    <div *ngFor="let oneNews of sportList">
+    <app-onenews [oneNews]="oneNews"></app-onenews>
+    <br>
+    </div>
+</div>
