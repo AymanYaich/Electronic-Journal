@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import {StateOneNewsService} from '../../services/state-one-news.service'
 @Component({
   selector: 'app-latestcontents',
   templateUrl: './latestcontents.component.html',
@@ -11,9 +12,10 @@ export class LatestcontentsComponent implements OnInit {
   latestArt:any=[];
   latestEconomy:any=[];
   dataAll:any=[];
-  constructor(public http:HttpClient) { }
+  constructor(public http:HttpClient , public stateServ : StateOneNewsService) { }
 
   ngOnInit(): void {
+    this.stateServ.changeDetail2()
     this.getLatestLocal()
     this.getLatestSport()
     this.getLatestEconomy()

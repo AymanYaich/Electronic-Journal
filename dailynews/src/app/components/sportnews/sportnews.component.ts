@@ -8,17 +8,21 @@ import {StateOneNewsService} from '../../services/state-one-news.service'
 })
 export class SportnewsComponent implements OnInit {
   sportList:any=[]
+  sport:any=[]
   constructor(private http:HttpClient , private stateServ:StateOneNewsService) { }
 
   ngOnInit(): void {
     this.getAll()
-    console.log(this.sportList)
+    
     this.stateServ.changeDetail()
   }
    getAll(){
-     this.http.get('http://localhost:3000/sport/creates').subscribe((datas)=>{
-       this.sportList=datas;
-       this.ngOnInit()
+     
+     
+       this.http.get('http://localhost:3000/sport/creates').subscribe((datas)=>{
+        this.sport=datas  
+        this.sportList=this.sport.reverse()
+         this.ngOnInit()
      })
    }
 }

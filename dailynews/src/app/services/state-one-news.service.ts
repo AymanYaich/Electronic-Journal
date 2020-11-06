@@ -9,6 +9,8 @@ export class StateOneNewsService {
 changeDetail(){
   this.detail=true
 }
-
+changeDetail2(){
+  this.detail=false
+}
 }
  
