@@ -36,7 +36,7 @@ export class LatestcontentsComponent implements OnInit {
            this.latestLocal[0]=this.dataAll[this.dataAll.length-1];
            this.latestLocal[1]=this.dataAll[this.dataAll.length-2];
            this.latestLocal[2]=this.dataAll[this.dataAll.length-3];
-           console.log("from server",this.latestLocal)
+           
           
         })
       }

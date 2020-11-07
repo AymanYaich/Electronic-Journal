@@ -1,16 +1,16 @@
-<app-navbar></app-navbar>
-<br><br>
+<app-navbar></app-navbar> <br /><br />
 <div id="newsTitleList">
-    <div class="alert alert-primary" role="alert">
-      <span style="color: grey; font-weight: bolder; "
-        >{{category}}
-      </span>
-    </div>
+  <div class="alert alert-primary" role="alert">
+    <span style="color: grey; font-weight: bolder">{{ category }} </span>
   </div>
-
-<div>
-    <div *ngFor="let oneNews of listNews">
-    <app-onenews [oneNews]="oneNews"></app-onenews>
-    <br>
-    </div>
 </div>
+<br />
+<div>
+ <div *ngFor="let oneNews of listNews| paginate: { itemsPerPage: 4, currentPage: p }">
+    <app-onenews [oneNews]="oneNews"></app-onenews>
+    <br />
+  </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  
+</div>
+<app-footer></app-footer>

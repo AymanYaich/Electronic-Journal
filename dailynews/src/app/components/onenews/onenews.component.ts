@@ -63,9 +63,9 @@ export class OnenewsComponent implements OnInit {
     }
     readMore(){
       
-      //this.router.navigate(['']);
-      this.router.navigate(['/news'],{queryParams:this.oneNews.title})
-      alert('hello click!!!')
+     
+      this.router.navigate(['/news'],{queryParams:{title:this.oneNews.title.slice(0,35)}})
+     
       this.sendTo();
       this.sendImgTo();
       this.sendTextTo();

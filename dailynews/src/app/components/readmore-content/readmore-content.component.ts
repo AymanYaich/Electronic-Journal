@@ -4,6 +4,7 @@ import { Router,NavigationEnd } from '@angular/router'
 import { ImageSendService } from '../../services/image-send.service';
 import { TextInterService } from '../../services/text-inter.service'
 import { DateService } from '../../services/date.service'
+
 @Component({
   selector: 'app-readmore-content',
   templateUrl: './readmore-content.component.html',
@@ -28,7 +29,12 @@ wordDate:any;
 
 
 ngOnInit(){
-
+  this.router.events.subscribe((evt) => {
+    if (!(evt instanceof NavigationEnd)) {
+        return;
+    }
+    window.scrollTo(0, 0)
+});
 this.getTitle();
 this.getImage();
 this.getText();

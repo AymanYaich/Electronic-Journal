@@ -29,7 +29,9 @@ import { LoginContentComponent } from './components/login-content/login-content.
 import { SignupContentComponent } from './components/signup-content/signup-content.component';
 import { ReadmoreContentComponent } from './components/readmore-content/readmore-content.component';
 import { DetailnewsComponent } from './components/detailnews/detailnews.component';
-
+import { JwPaginationModule } from 'jw-angular-pagination';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import {NgxPaginationModule} from 'ngx-pagination'; 
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import { DetailnewsComponent } from './components/detailnews/detailnews.componen
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    JwPaginationModule,
+    NgxPaginationModule
   ],
   providers: [
     {
@@ -70,5 +74,9 @@ import { DetailnewsComponent } from './components/detailnews/detailnews.componen
     },
   ],
   bootstrap: [AppComponent],
+  schemas:  [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA,
+  ]
 })
 export class AppModule {}
