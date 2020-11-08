@@ -18,3 +18,21 @@
     height:15px;
     border-radius: 50%;
 }
+
+#adminNewsText *{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-radius: 0 !important;
+    background-color: #b3e3fc;
+    line-height: 50px;
+    top: 20px;
+    
+  
+  }
+  #message *{
+    position:relative;
+    width:600px;
+    border-radius: 0 !important;
+}
+

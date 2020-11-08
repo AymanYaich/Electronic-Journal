@@ -1,5 +1,13 @@
-<app-navbar></app-navbar> <br /><br /><br />
+<app-navbar></app-navbar> <br />
+
+  
 <div *ngIf="initialIn">
+  <div id ="adminText">
+    <h2 style="color:grey; font-weight:900;"
+       >Admin interface
+   </h2>
+   </div>
+   <br>
 <div id="message">
   <div class="alert alert-info" role="alert">
     <span style="font-weight: bold"
@@ -76,7 +84,19 @@
 
     <div *ngIf="newsIn">
         <app-adminnews></app-adminnews>
+        <div id="returnButton">
+          <button
+          type="button"
+          id="buttonNews"
+          class="btn btn-primary"
+          (click)="return()"
+         >
+       
+          Previous
+         </button>
+          </div>
     </div>
     <div *ngIf="regionsIn">
         <app-adminregions></app-adminregions>
     </div>
+    <br><br>

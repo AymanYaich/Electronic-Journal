@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminInteractionService } from '../../services/admin-interaction.service'
 
 
 @Component({
@@ -9,14 +10,19 @@ import { Component, OnInit } from '@angular/core';
 export class AdminpageComponent implements OnInit {
 
   
-  constructor( ) {}
+  constructor( public interactionServ:AdminInteractionService) {}
     newsIn:boolean=false;
     regionsIn:boolean=false;
     advsIn:boolean=false;
     usersIn:boolean=false;
     initialIn:boolean=true;
   ngOnInit(): void {
- 
+   
+    console.log(this.interactionServ.returnAdmin)
+    console.log('you are still in parent component')
+    console.log("a",this.newsIn)
+    console.log("b",this.initialIn)
+    
   }
     news(){
       this.newsIn=true;
@@ -46,4 +52,9 @@ export class AdminpageComponent implements OnInit {
       this.usersIn=true;
       this.initialIn=false;
     }
+    return(){
+      this.initialIn=true;
+      this.newsIn=false;
+    }
+  
  }

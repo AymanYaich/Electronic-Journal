@@ -35,8 +35,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { AdvertisingComponent } from './components/advertising/advertising.component';
 import { AdminnewsComponent } from './components/adminnews/adminnews.component';
 import { AdminregionsComponent } from './components/adminregions/adminregions.component';
-import { AdmniadvertiseComponent } from './componentes/admniadvertise/admniadvertise.component';
-import { AdminusersComponent } from './components/adminusers/adminusers.component'; 
+import { AdminusersComponent } from './components/adminusers/adminusers.component';
+import { AdminadvertiseComponent } from './components/adminadvertise/adminadvertise.component'; 
 
 @NgModule({
   declarations: [
@@ -61,8 +61,8 @@ import { AdminusersComponent } from './components/adminusers/adminusers.componen
     AdvertisingComponent,
     AdminnewsComponent,
     AdminregionsComponent,
-    AdmniadvertiseComponent,
-    AdminusersComponent,
+   AdminusersComponent,
+   AdminadvertiseComponent,
   ],
   imports: [
     BrowserModule,

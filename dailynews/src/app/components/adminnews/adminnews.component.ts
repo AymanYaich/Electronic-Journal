@@ -1,6 +1,7 @@
 
 import { Component, OnInit,ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AdminInteractionService } from '../../services/admin-interaction.service'
 @Component({
   selector: 'app-adminnews',
   templateUrl: './adminnews.component.html',
@@ -18,7 +19,7 @@ export class AdminnewsComponent implements OnInit {
   statusVal:String="";
   dataBase:any=[];
 
-  constructor(public http: HttpClient ) { }
+  constructor(public http: HttpClient,public interctionServ : AdminInteractionService ) { }
 
   ngOnInit(): void {
    // this.getRegions()
@@ -90,7 +91,8 @@ statusData(){
    }
  }
 }
- 
+
+
 
 
 }
