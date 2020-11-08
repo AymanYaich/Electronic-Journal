@@ -41,5 +41,6 @@ export class AddNewsComponent implements OnInit {
     this.http.post(`${this.url}/${this.oneEdit}/creates`,news).subscribe(()=>{
       this.ngOnInit();
     })
+    
   }
 }

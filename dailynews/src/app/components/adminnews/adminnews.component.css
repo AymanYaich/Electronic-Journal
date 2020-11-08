@@ -1,0 +1,20 @@
+#buttonNews{
+    position:relative;
+    width:120px;
+    height:45px;
+}
+#buttonsList {
+  margin: auto;
+  width: 50%;
+}
+
+#NewsEditionContainer {
+    margin: auto;
+    width: 42%;
+}
+.img{
+    position:absolute;
+    width:5%x;
+    height:15px;
+    border-radius: 50%;
+}

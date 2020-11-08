@@ -1,0 +1,68 @@
+
+<div id="buttonsList">
+    <table>
+      <tr>
+        <th>
+          <button
+            type="button"
+            id="buttonNews"
+            class="btn btn-primary"
+            (click)="nationalEdit()"
+          >
+            National
+          </button>
+        </th>
+        <th>
+          <button
+            type="button"
+            id="buttonNews"
+            class="btn btn-primary"
+            (click)="internationalEdit()"
+          >
+            International
+          </button>
+        </th>
+        <th>
+          <button
+            type="button"
+            id="buttonNews"
+            class="btn btn-primary"
+            (click)="economyEdit()"
+          >
+            Economy
+          </button>
+        </th>
+        <th>
+          <button
+            type="button"
+            id="buttonNews"
+            class="btn btn-primary"
+            (click)="sportEdit()"
+          >
+            Sport
+          </button>
+        </th>
+        <th>
+          <button
+            type="button"
+            id="buttonNews"
+            class="btn btn-primary"
+            (click)="artEdit()"
+          >
+            Art
+          </button>
+        </th>
+      </tr>
+    </table>
+  </div>
+  
+  <br /><br /><br />
+  
+  <div id="NewsEditionContainer">
+    <div>
+      <span *ngFor="let oneEdit of dataBase">
+        <app-add-news [oneEdit]="oneEdit"></app-add-news>
+      </span>
+    </div>
+   
+    </div>

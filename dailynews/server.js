@@ -11,6 +11,7 @@ let artNews = require ('../dailynews/backend_data/routes/art');
 let user = require ( '../dailynews/backend_data/routes/register.js')
 let login = require ('../dailynews/backend_data/routes/login')
 let regions = require('../dailynews/backend_data/routes/regions.js')
+let advertise = require('../dailynews/backend_data/routes/advertising.js')
 let cors = require('cors');
 let bcryptjs = require ('bcryptjs');
 let jwt = require ('jsonwebtoken');
@@ -69,6 +70,7 @@ app.use("/art",artNews)
 app.use("/register",user)
 app.use("/login",login)
 app.use("/regions",regions)
+app.use("/advertising",advertise)
 
 // app.use(function (err, req, res, next) {
 //     if (err.name === 'UnauthorizedError') {

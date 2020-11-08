@@ -31,7 +31,12 @@ import { ReadmoreContentComponent } from './components/readmore-content/readmore
 import { DetailnewsComponent } from './components/detailnews/detailnews.component';
 import { JwPaginationModule } from 'jw-angular-pagination';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
-import {NgxPaginationModule} from 'ngx-pagination'; 
+import {NgxPaginationModule} from 'ngx-pagination';
+import { AdvertisingComponent } from './components/advertising/advertising.component';
+import { AdminnewsComponent } from './components/adminnews/adminnews.component';
+import { AdminregionsComponent } from './components/adminregions/adminregions.component';
+import { AdmniadvertiseComponent } from './componentes/admniadvertise/admniadvertise.component';
+import { AdminusersComponent } from './components/adminusers/adminusers.component'; 
 
 @NgModule({
   declarations: [
@@ -53,6 +58,11 @@ import {NgxPaginationModule} from 'ngx-pagination';
     SignupContentComponent,
     ReadmoreContentComponent,
     DetailnewsComponent,
+    AdvertisingComponent,
+    AdminnewsComponent,
+    AdminregionsComponent,
+    AdmniadvertiseComponent,
+    AdminusersComponent,
   ],
   imports: [
     BrowserModule,

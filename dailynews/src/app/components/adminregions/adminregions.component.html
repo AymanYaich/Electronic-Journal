@@ -1,0 +1,29 @@
+
+ <button (click)="regionTo()">Regions Settings</button>
+ <div *ngIf="ifRegion">
+   <form (ngSubmit)="addRegion()">
+     <label for="region">Add Region</label>
+     <input type=text id="region" placeholder="add region" [(ngModel)]="region"
+     [ngModelOptions]="{standalone: true}">
+     <label for="photo">Add Region</label>
+     <input type=text id="photo" placeholder="add url photo"
+     [(ngModel)]="photoRegion"[ngModelOptions]="{standalone: true}">
+     <button type="submit">Add to the list</button>
+     {{regionList}}
+   </form>
+   <button (click)="advertiseTo()">Add the advertising</button>
+<div *ngIf="advertiseIn">
+ <br>
+ <div>
+   <button (click)="defaultAdvertiseTo()">Set your default advertise Content</button>
+   <button (click)="addNew()">Add new advertise</button>
+ </div>
+ <br><br>
+ <div *ngIf="default">
+  <button (click)="setDefault()">Set default Advertise</button>
+ </div>
+ <div *ngIf="newAdvertise">
+   <button (click)="setNew()">Set new advertise</button>
+ </div>
+
+</div>
