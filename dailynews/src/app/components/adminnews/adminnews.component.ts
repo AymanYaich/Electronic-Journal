@@ -17,6 +17,7 @@ export class AdminnewsComponent implements OnInit {
   sportStatus:boolean=false;
   artStatus:boolean=false;
   statusVal:String="";
+  allIf:Boolean=true
   dataBase:any=[];
 
   constructor(public http: HttpClient,public interctionServ : AdminInteractionService ) { }
@@ -35,6 +36,7 @@ export class AdminnewsComponent implements OnInit {
     this.dataBase.pop()
     this.dataBase.push("national")
     this.statusData()
+    this.allIf=false
  };
  internationalEdit(){
    this.nationalStatus=false;
@@ -45,6 +47,7 @@ export class AdminnewsComponent implements OnInit {
    this.dataBase.pop()
    this.dataBase.push("international")
     this.statusData()
+    this.allIf=false
  };
  economyEdit(){
    this.nationalStatus=false;
@@ -55,6 +58,7 @@ export class AdminnewsComponent implements OnInit {
    this.dataBase.pop()
    this.dataBase.push("economy")
     this.statusData()
+    this.allIf=false
  };
  sportEdit(){
    this.nationalStatus=false;
@@ -65,6 +69,7 @@ export class AdminnewsComponent implements OnInit {
     this.dataBase.pop();
     this.dataBase.push("sport")
    this.statusData()
+   this.allIf=false
 
  };
  artEdit(){
@@ -76,6 +81,7 @@ export class AdminnewsComponent implements OnInit {
    this.dataBase.pop();
    this.dataBase.push("art")
    this.statusData()
+   this.allIf=false
  };
 
 statusData(){

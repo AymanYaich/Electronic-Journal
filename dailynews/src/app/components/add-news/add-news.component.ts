@@ -12,6 +12,8 @@ export class AddNewsComponent implements OnInit {
    upload:any;
    categoryTitle:any
    url:String=`http://localhost:3000`
+   allOptions:Boolean=true;
+   addNews:Boolean=false
    @Input()  oneEdit:any=[];
   constructor(private http : HttpClient) { }
    
@@ -42,5 +44,9 @@ export class AddNewsComponent implements OnInit {
       this.ngOnInit();
     })
     
+  }
+  add(){
+    this.allOptions=false;
+    this.addNews=true
   }
 }

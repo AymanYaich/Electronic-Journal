@@ -1,3 +1,62 @@
+<div *ngIf="allOptions" >
+  <div id=adminNewsText>
+  <h2 style="color:grey; font-weight:900;"
+     >Admin interface:News/{{categoryTitle}}
+ </h2>
+</div>
+ <br>
+ <div id="message">
+  <div class="alert alert-info" role="alert">
+    <span style="font-weight: bold"
+      >If you like to add a new news click on add, else if you want to edit or delete a news clik on Edit/Delete</span
+    >
+  </div>
+</div>
+
+<div id="startMenu">
+  <table>
+    <tr>
+      <td>
+        <button
+        type="button"
+        id="buttonNews"
+        class="btn btn-primary"
+         (click)="add()"
+      >
+        Add
+      </button>
+      </td>
+      <td>
+        <button
+        type="button"
+        id="buttonNews"
+        class="btn btn-primary"
+        (click)="delete()" 
+      >
+        Edit/Delete
+      </button>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<div *ngIf="addNews">
+    <div id="adminNewsText">
+    <h2 style="color:grey; font-weight:900;"
+       >Admin interface:News/{{categoryTitle}}/Add-News
+   </h2>
+   </div>
+   <br>
+   <div id="message">
+    <div class="alert alert-info" role="alert">
+      <span style="font-weight: bold"
+        >If you like to add a new news click on add, else if you want to edit or delete a news clik on Edit/Delete</span
+      >
+    </div>
+  </div>
+  
+<div id="newsAdd">
 <h1 style="color: red; font-weight: bolder">{{categoryTitle}} News</h1>
 <form (ngSubmit)="sendTo()" action="/Upload" method="post" enctype="multipart/form-data">
     <label for="file">Upload the photo of the {{oneEdit}}-news</label>
@@ -36,3 +95,5 @@
     <br />
     <button type="submit">Add News</button>
   </form>
+</div>
+</div>

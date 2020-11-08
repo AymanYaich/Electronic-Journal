@@ -1,3 +1,4 @@
+<div *ngIf="allIf">
 <div id ="adminNewsText">
   <h2 style="color:grey; font-weight:900;"
      >Admin interface:News
@@ -68,13 +69,14 @@
       </tr>
     </table>
   </div>
- <br>
+  </div>
+ 
 
-  <div id="NewsEditionContainer">
+
     <div>
       <span *ngFor="let oneEdit of dataBase">
         <app-add-news [oneEdit]="oneEdit"></app-add-news>
       </span>
     </div>
    
-    </div>
+   
