@@ -14,3 +14,25 @@
     border-radius: 0 !important;
     
 }
+
+#editionButton{
+    position: absolute;
+    left:500px
+}
+#buttonNews{
+    position:relative;
+    width:120px;
+    height:45px;
+}
+
+#newsAdd{
+    position:relative;
+    left:100px
+}
+
+#newsInputs{
+    position:absolute;
+    width:600px
+}
+
+    

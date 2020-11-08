@@ -1,67 +1,125 @@
-<div *ngIf="allOptions" >
-  <div id=adminNewsText>
-  <h2 style="color:grey; font-weight:900;"
-     >Admin interface:News/{{categoryTitle}}
- </h2>
-</div>
- <br>
- <div id="message">
-  <div class="alert alert-info" role="alert">
-    <span style="font-weight: bold"
-      >If you like to add a new news click on add, else if you want to edit or delete a news clik on Edit/Delete</span
-    >
+<div *ngIf="allOptions">
+  <div id="adminNewsText">
+    <h2 style="color: grey; font-weight: 900">
+      Admin interface:News/{{ categoryTitle }}
+    </h2>
   </div>
-</div>
-
-<div id="startMenu">
-  <table>
-    <tr>
-      <td>
-        <button
-        type="button"
-        id="buttonNews"
-        class="btn btn-primary"
-         (click)="add()"
-      >
-        Add
-      </button>
-      </td>
-      <td>
-        <button
-        type="button"
-        id="buttonNews"
-        class="btn btn-primary"
-        (click)="delete()" 
-      >
-        Edit/Delete
-      </button>
-      </td>
-    </tr>
-  </table>
-</div>
-</div>
-
-<div *ngIf="addNews">
-    <div id="adminNewsText">
-    <h2 style="color:grey; font-weight:900;"
-       >Admin interface:News/{{categoryTitle}}/Add-News
-   </h2>
-   </div>
-   <br>
-   <div id="message">
+  <br />
+  <div id="message">
     <div class="alert alert-info" role="alert">
       <span style="font-weight: bold"
-        >If you like to add a new news click on add, else if you want to edit or delete a news clik on Edit/Delete</span
+        >If you like to add a new news click on add, else if you want to edit or
+        delete a news clik on Edit/Delete</span
       >
     </div>
   </div>
-  
-<div id="newsAdd">
-<h1 style="color: red; font-weight: bolder">{{categoryTitle}} News</h1>
-<form (ngSubmit)="sendTo()" action="/Upload" method="post" enctype="multipart/form-data">
-    <label for="file">Upload the photo of the {{oneEdit}}-news</label>
-    <br />
-    <!-- <input
+
+  <div id="startMenu">
+    <div id="editionButton">
+      <table>
+        <tr>
+          <td>
+            <button
+              type="button"
+              id="buttonNews"
+              class="btn btn-primary"
+              (click)="add()"
+            >
+              Add
+            </button>
+          </td>
+          <td>
+            <button
+              type="button"
+              id="buttonNews"
+              class="btn btn-primary"
+              (click)="delete()"
+            >
+              Edit/Delete
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="addNews">
+  <div id="adminNewsText">
+    <h2 style="color: grey; font-weight: 900">
+      Admin interface:News/{{ categoryTitle }}/Add-News
+    </h2>
+  </div>
+  <br />
+  <div id="message">
+    <div class="alert alert-info" role="alert">
+      <span style="font-weight: bold"
+        >Enter the title ,upload its image and write its corresponding
+        text!</span
+      >
+    </div>
+  </div>
+
+  <div *ngIf="formShow" id="newsAdd">
+    
+    <form (ngSubmit)="sendFirst()">
+      <div id="newsInputs">
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm"
+              >Title</span
+            >
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            aria-label="Title"
+            aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="title"
+            [ngModelOptions]="{standalone: true}"
+          />
+        </div>
+        <p style="color:red">{{titleAlert}}</p>
+        <br>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm"
+              >Image</span
+            >
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            aria-label="Image"
+            aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="imageUrl"
+            [ngModelOptions]="{standalone: true}"
+          />
+        </div>
+         
+         <p style="color:red">{{imageAlert}}</p>
+         <br>
+        <div class="media-body">
+          <h5 class="mt-0 font-weight-bold blue-text">Write your text here</h5>
+          <div class="form-group basic-textarea rounded-corners">
+            <textarea
+              class="form-control z-depth-1"
+              id="exampleFormControlTextarea345"
+              rows="13"
+              placeholder="Write your article..."
+              [(ngModel)]="textNews"
+              [ngModelOptions]="{standalone: true}"
+            ></textarea>
+          </div>
+        </div>
+        <br>
+        <p style="color:red">{{textAlert}}</p>
+        <p style="color:red">{{alert}}</p>
+        <button type="submit" class="btn btn-primary" >Add</button>
+       
+        
+      </div>
+        <!-- <input
       #fileInput
       type="file"
       id="myFile"
@@ -69,31 +127,11 @@
       name="file"
       (change)="fileChangeEvent($event.target.files)"
     /> -->
-    <input type="text" id="image" name="image" [(ngModel)]="imageUrl"/>
-  <br /><br />
-    <br /><br />
-    <label for="Title">Add the title of the news</label>
-    <br />
-    <input
-      type="text"
-      id="Title"
-      name="Title"
-      [(ngModel)]="title"
-      placeholder="title"
-    />
-    <br /><br />
-    <label for="TextNews">Add news text</label>
-    <br />
-    <textarea
-      id="TextNews"
-      name="TextNews"
-      [(ngModel)]="textNews"
-      rows="4"
-      cols="50"
-    >
-    </textarea>
-    <br />
-    <button type="submit">Add News</button>
-  </form>
-</div>
+    </form>
+  </div>
+  <div *ngIf="modelShow" id="newsAdd">
+    <div let='onen of dataSample'>
+    <app-onenews [one]="one"></app-onenews>
+  </div>
+  </div>
 </div>
