@@ -22,7 +22,8 @@ export class AddNewsComponent implements OnInit {
    ableToSend:boolean=true;
    modelShow:boolean=false;
    arrayMissedContent=[]
-   dataSample:any=[]
+   dataSample:any=[];
+   detailNews:boolean=false
    @Input()  oneEdit:any=[];
   constructor(private http : HttpClient) { }
    
@@ -106,5 +107,15 @@ export class AddNewsComponent implements OnInit {
   add(){
     this.allOptions=false;
     this.addNews=true
+  }
+  readmore(){
+    this.modelShow=false;
+    this.detailNews=true;
+  }
+  edit(){
+    this.modelShow=false;
+    this.detailNews=false;
+    this.formShow=true;
+    
   }
 }

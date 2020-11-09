@@ -26,9 +26,13 @@
   top: 20px;
 }
 #returnButton{
-    position :fixed;
+    position :absolute;
     left:1100px;
     top:330px;
 }
 
-
+#back{
+  content:  \2190;
+  font-size: larger;
+  font-weight: bold;
+}

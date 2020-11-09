@@ -18,26 +18,30 @@
     <div id="editionButton">
       <table>
         <tr>
-          <td>
-            <button
-              type="button"
-              id="buttonNews"
-              class="btn btn-primary"
-              (click)="add()"
-            >
-              Add
-            </button>
-          </td>
-          <td>
-            <button
-              type="button"
-              id="buttonNews"
-              class="btn btn-primary"
-              (click)="delete()"
-            >
-              Edit/Delete
-            </button>
-          </td>
+          <th>
+            <div id="optiontable">
+              <button
+                type="button"
+                id="buttonNews"
+                class="btn btn-primary"
+                (click)="add()"
+              >
+                Add
+              </button>
+            </div>
+          </th>
+          <th>
+            <div id="optiontable">
+              <button
+                type="button"
+                id="buttonNews"
+                class="btn btn-primary"
+                (click)="delete()"
+              >
+                Edit/Delete
+              </button>
+            </div>
+          </th>
         </tr>
       </table>
     </div>
@@ -61,7 +65,6 @@
   </div>
 
   <div *ngIf="formShow" id="newsAdd">
-    
     <form (ngSubmit)="sendFirst()">
       <div id="newsInputs">
         <div class="input-group input-group-sm mb-3">
@@ -76,11 +79,11 @@
             aria-label="Title"
             aria-describedby="inputGroup-sizing-sm"
             [(ngModel)]="title"
-            [ngModelOptions]="{standalone: true}"
+            [ngModelOptions]="{ standalone: true }"
           />
         </div>
-        <p style="color:red">{{titleAlert}}</p>
-        <br>
+        <p style="color: red">{{ titleAlert }}</p>
+        <br />
         <div class="input-group input-group-sm mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-sm"
@@ -93,12 +96,12 @@
             aria-label="Image"
             aria-describedby="inputGroup-sizing-sm"
             [(ngModel)]="imageUrl"
-            [ngModelOptions]="{standalone: true}"
+            [ngModelOptions]="{ standalone: true }"
           />
         </div>
-         
-         <p style="color:red">{{imageAlert}}</p>
-         <br>
+
+        <p style="color: red">{{ imageAlert }}</p>
+        <br />
         <div class="media-body">
           <h5 class="mt-0 font-weight-bold blue-text">Write your text here</h5>
           <div class="form-group basic-textarea rounded-corners">
@@ -108,18 +111,16 @@
               rows="13"
               placeholder="Write your article..."
               [(ngModel)]="textNews"
-              [ngModelOptions]="{standalone: true}"
+              [ngModelOptions]="{ standalone: true }"
             ></textarea>
           </div>
         </div>
-        <br>
-        <p style="color:red">{{textAlert}}</p>
-        <p style="color:red">{{alert}}</p>
-        <button type="submit" class="btn btn-primary" >Add</button>
-       
-        
+        <br />
+        <p style="color: red">{{ textAlert }}</p>
+        <p style="color: red">{{ alert }}</p>
+        <button type="submit" class="btn btn-primary">Add</button>
       </div>
-        <!-- <input
+      <!-- <input
       #fileInput
       type="file"
       id="myFile"
@@ -130,8 +131,89 @@
     </form>
   </div>
   <div *ngIf="modelShow" id="newsAdd">
-    <div let='onen of dataSample'>
-    <app-onenews [one]="one"></app-onenews>
+    <div>
+      <div id="newsContainer">
+        <div>
+          <div id="newscomponent">
+            <div>
+              <img src="{{ imageUrl }}" />
+            </div>
+            <div id="addedAt">
+              <p><span>&#x270D;</span> hhhhh GMT</p>
+            </div>
+            <div id="onenewsTitle">
+              <p>{{ title }}</p>
+            </div>
+            <div id="onenewsDescription">
+              <p>
+                {{ textNews.slice(0, 110)
+                }}<span style="font-weight: bold">...</span>
+              </p>
+            </div>
+
+            <div id="buttonReadMore">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                (click)="readmore()"
+              >
+                Read more...
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <div *ngIf="detailNews" id="detailAdd">
+    <div>
+      <div id="readmoreContent">
+        <div id="categoryContainer">
+          <h2 style="color: grey; font-weight: 900">category</h2>
+        </div>
+        <div id="imageContainer">
+          <img id="detailImage" src="{{ imageUrl }}" />
+        </div>
+        <div id="dateContainer">
+          <p><span>&#x270D;</span> date Time GMT</p>
+        </div>
+        <div id="titleContainer">
+          <h1>{{ title }}</h1>
+        </div>
+        <div id="textContainer">
+          <hr />
+          <br />
+          <p
+            style="
+              font-size: 20px;
+              font-style: italic;
+              font-family: Times New Roman, Times, serif;
+            "
+          >
+            {{ textNews }}
+          </p>
+          <br />
+          <hr />
+        </div>
+        <div id="buttonEdit">
+          <button
+            type="button"
+            
+            class="btn btn-primary"
+            (click)="edit()"
+          >
+            <span>&#8656;</span>Edit
+          </button>
+          <button
+            type="button"
+            
+            class="btn btn-primary"
+            (click)="sendTo()"
+          >
+            <span>&#8656;</span>Edit
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
