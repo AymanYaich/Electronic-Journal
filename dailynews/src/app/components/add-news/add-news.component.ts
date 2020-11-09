@@ -23,13 +23,24 @@ export class AddNewsComponent implements OnInit {
    modelShow:boolean=false;
    arrayMissedContent=[]
    dataSample:any=[];
+   dataNews:any=[];
+   dataOrdered:any=[]
+   dataSize:number;
    detailNews:boolean=false
+   successSend=false
+   editdeleteNews=false;
+   
    @Input()  oneEdit:any=[];
   constructor(private http : HttpClient) { }
    
   ngOnInit(): void {
    
     this.categoryTitle=this.oneEdit.charAt(0).toUpperCase()+this.oneEdit.slice(1)
+    this.getAll();
+    this.dataSize=this.dataNews.length
+    this.dataOrdered=this.dataNews.reverse()
+    console.log(this.dataNews)
+
   }
 
   fileChangeEvent(event){
@@ -40,21 +51,36 @@ export class AddNewsComponent implements OnInit {
          this.upload=file
     }
 }
-  sendTo(){
-    // let fd = new FormData();
-    // fd.append('image',this.upload);
-    // fd.append('title',this.title);
-    // fd.append('text',this.textNews)
+ getAll(){
+   this.http.get(`${this.url}/${this.oneEdit}/creates`).subscribe((datas)=>{
+     this.dataNews=datas;
+     this.ngOnInit()
+   })
+   
+  }
+  sendPre(){
+
      let news={
        image:this.imageUrl,
        title:this.title,
        text:this.textNews
      }
-     console.log(news)
-    this.http.post(`${this.url}/${this.oneEdit}/creates`,news).subscribe(()=>{
-      this.ngOnInit();
-    })
     
+    this.http.post(`${this.url}/${this.oneEdit}/creates`,news).subscribe(()=>{
+     this.ngOnInit()
+    })
+ }
+
+  sendTo(){
+   const size=this.dataSize;
+  this.sendPre();
+  this.getAll();
+ console.log("last",this.dataNews[this.dataNews.length-1])
+  let newSize=this.dataNews.length
+  console.log("size2",newSize)
+  console.log("size1",size)
+  this.successSend=true
+  this.detailNews=false;
   }
  sendFirst(){
     
@@ -115,7 +141,17 @@ export class AddNewsComponent implements OnInit {
   edit(){
     this.modelShow=false;
     this.detailNews=false;
-    this.formShow=true;
+    this.formShow=false;
     
   }
+  anOtherNews(){
+    this.successSend=false;
+    this.allOptions=true;
+    this.addNews=false;
+
+  }
+  deleteedit(){
+   this.editdeleteNews=true;
+   this.allOptions=false
+}
 }

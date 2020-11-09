@@ -5,7 +5,7 @@
         <div class="day">
           <p div="textDay">
             <span style="font-style: italic; font-weight: bold; font-size: 12px"
-              >Tunis</span
+              >{{city}}</span
             >
 
             <span
@@ -109,13 +109,18 @@
                   </div>
                 </div>
                 <div *ngIf="ifLogged">
-                  <h4>{{ user.firstName }} {{ user.lastName }}</h4>
+                  <div id="userName">
+                  <h4 style="color:wheat;font-weight: bold;">{{ user.firstName }}{{ user.lastName }}</h4>
+                </div>
                   <div id="logout">
-                    <button (click)="logout()">LogOut</button>
+                    <button class="btn bg-transparent"(click)="logout()"><span style="color:wheat">logout</span></button>
+                    
                   </div>
                 </div>
               </div>
-              <div></div>
+              <div>
+
+              </div>
             </ul>
           </div>
         </div>

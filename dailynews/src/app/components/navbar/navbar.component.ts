@@ -20,7 +20,8 @@ export class NavbarComponent implements OnInit {
   currentUser:any;
   ifLogged:boolean=false
   category:String=""
-  user:{};
+  user:any={};
+  city="Tunis"
   constructor( private weatherservice:WeatherService  ,private authServ :AuthService ,private typeOfServ : TypeOfService){ }
 
   private updateSubscription: Subscription;
@@ -32,8 +33,15 @@ export class NavbarComponent implements OnInit {
     this.ifLogged = this.authServ.signedIn
     
     this.currentUser=this.authServ.currentUser;
-    this.user=this.currentUser.msg
-   
+    this.user=this.currentUser.msg;
+    console.log(this.user.city)
+    if(this.ifLogged===true){
+     this.city=this.user.city
+    }
+   else{
+    this.city="Tunis"
+   }
+    
   }
   timeNow(){
     
@@ -55,8 +63,7 @@ export class NavbarComponent implements OnInit {
   }
   logout(){
     this.authServ.doLogout()
-    console.log('jbjkj',this.ifLogged)
-  }
+   }
 
 nationalType(){
   this.typeOfServ.newsCategory='national'

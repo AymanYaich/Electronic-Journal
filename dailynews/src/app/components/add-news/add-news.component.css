@@ -177,4 +177,10 @@ img{
       top:1100px;
   }
 
-    
+  #wrapper {
+    position:relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2em;
+    left:5px;
+  }

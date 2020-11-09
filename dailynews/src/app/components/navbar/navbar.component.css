@@ -141,7 +141,13 @@ li:active {
   border-bottom: 3px solid wheat;
 }
 #logout{
-  position:absolute;
-  left:1000;
-  top:5px
+  position:relative;
+  right:20px;
+  top:-21px
+}
+
+#userName{
+  position:relative;
+  right:20px;
+  top:2px;
 }

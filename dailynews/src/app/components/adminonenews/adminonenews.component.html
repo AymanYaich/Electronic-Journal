@@ -1,0 +1,29 @@
+<div id="newscomponent">
+  <div>
+    <img src="{{ oneNews.image }}" />
+  </div>
+  <div id="addedAt">
+    <p><span>&#x270D;</span> {{ date }} @ {{ time }} GMT</p>
+  </div>
+  <div id="onenewsTitle">
+    <p>{{ oneNews.title }}</p>
+  </div>
+  <div id="onenewsDescription">
+    <p>
+      {{ oneNews.text.slice(0, 110) }}<span style="font-weight: bold">...</span>
+     
+    </p>
+  </div>
+<p>{{message}}  </p>
+  <!-- <div id="buttonEdit">
+    <button type="button" class="btn btn-secondary" (click)="edit()">
+      Edit
+    </button>
+  </div> -->
+  <div id="buttonDelete">
+    <button type = "button" class= "btn btn-secondary" (click) = "delete()" >
+      Delete
+    </button>
+  
+  </div>
+</div>

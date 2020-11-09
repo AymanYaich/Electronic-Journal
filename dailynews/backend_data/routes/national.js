@@ -29,6 +29,18 @@ route.get("/creates",(req,res)=>{
         }
     })
 })
+route.delete("/delete/",(req,res)=>{
+
+    NationalNews.findOneAndRemove({title:req.query.title},(err, news) => {
+        if (err) {
+        res.json("can not find or remove this newsn");
+        }
+        else {
+          res.status(201).json(news);
+        }
+    })
+})
+
 
 /* Multer : upload files*/
 //route.use(multer)
@@ -61,4 +73,4 @@ let upload = multer({
     
 // });
 
-module.exports=route;
+module.exports=  route

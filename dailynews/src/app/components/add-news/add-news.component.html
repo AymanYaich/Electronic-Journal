@@ -36,7 +36,7 @@
                 type="button"
                 id="buttonNews"
                 class="btn btn-primary"
-                (click)="delete()"
+                (click)="deleteedit()"
               >
                 Edit/Delete
               </button>
@@ -196,24 +196,37 @@
           <hr />
         </div>
         <div id="buttonEdit">
-          <button
-            type="button"
-            
-            class="btn btn-primary"
-            (click)="edit()"
-          >
+          <button type="button" class="btn btn-primary" (click)="edit()">
             <span>&#8656;</span>Edit
           </button>
-          <button
-            type="button"
-            
-            class="btn btn-primary"
-            (click)="sendTo()"
-          >
+          <button type="button" class="btn btn-primary" (click)="sendTo()">
             <span>&#8656;</span>Edit
           </button>
         </div>
       </div>
     </div>
+  </div>
+  <div *ngIf="successSend" id="successMessage">
+    <h1>Congratulation you successefully add the new news</h1>
+    <button type="button" class="btn btn-primary" (click)="anOtherNews()">
+      Add an other {{ categoryTitle }} news
+    </button>
+  </div>
+</div>
+<div *ngIf="editdeleteNews">
+  <br />
+  <h2 style="color: grey; font-weight: 900">
+    Admin interface:News/{{ categoryTitle }}/Delete/Edit
+  </h2>
+  <div id="wrapper">
+    
+
+  
+    <span *ngFor="let oneNews of dataNews">
+      
+      <app-adminonenews [oneNews]="oneNews"></app-adminonenews>
+   
+    </span>
+   
   </div>
 </div>

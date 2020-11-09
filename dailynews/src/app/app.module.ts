@@ -36,7 +36,9 @@ import { AdvertisingComponent } from './components/advertising/advertising.compo
 import { AdminnewsComponent } from './components/adminnews/adminnews.component';
 import { AdminregionsComponent } from './components/adminregions/adminregions.component';
 import { AdminusersComponent } from './components/adminusers/adminusers.component';
-import { AdminadvertiseComponent } from './components/adminadvertise/adminadvertise.component'; 
+import { AdminadvertiseComponent } from './components/adminadvertise/adminadvertise.component';
+import { AdminonenewsComponent } from './components/adminonenews/adminonenews.component';
+
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import { AdminadvertiseComponent } from './components/adminadvertise/adminadvert
     AdminregionsComponent,
    AdminusersComponent,
    AdminadvertiseComponent,
+   AdminonenewsComponent,
+   
   ],
   imports: [
     BrowserModule,

@@ -46,9 +46,10 @@ endpoint: string = 'http://localhost:3000';
           this.currentUser = res;
           this.signedIn=true;
           if (res.msg.role===1){
-            this.router.navigate(['admin'])
+            this.router.navigate([''])
           }else {
-          this.router.navigate(['profile/' + res.msg._id]);
+            this.router.navigate([''])
+        //this.router.navigate(['profile/' + res.msg._id]);
           //this._location.back();
         }
         })
@@ -69,7 +70,7 @@ endpoint: string = 'http://localhost:3000';
     if (removeToken == null) {
       this.signedIn=false
       window.location.reload();
-      //this.router.navigate(['log-in']);
+      this.router.navigate(['']);
     }
   }
 
