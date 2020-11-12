@@ -53,10 +53,13 @@ export class AddNewsComponent implements OnInit {
 }
  getAll(){
    this.http.get(`${this.url}/${this.oneEdit}/creates`).subscribe((datas)=>{
-     this.dataNews=datas;
-     this.ngOnInit()
-   })
-   
+    let data:any=[];
+   data=datas;
+   let max=data.length-1;
+   for( let i =max ; i>=0 ; i ++)
+     this.dataNews[max-i]=data[i]
+  })
+   console.log("newsToDelete",this.dataNews)
   }
   sendPre(){
 

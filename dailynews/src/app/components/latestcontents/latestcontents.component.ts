@@ -59,6 +59,7 @@ export class LatestcontentsComponent implements OnInit {
             
            
          })
+        
         }
         getLatestArt(){
           this.http.get('http://localhost:3000/art/creates').subscribe((datas)=>{

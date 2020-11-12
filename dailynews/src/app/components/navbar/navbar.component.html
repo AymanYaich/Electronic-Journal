@@ -37,7 +37,7 @@
           <img src="assets/logoJournal.png" />
         </a>
       </div>
-      <div id="searchBar">
+      <!-- <div id="searchBar">
         <div class="md-form active-cyan active-cyan-2 mb-3">
           <input
             class="form-control"
@@ -46,7 +46,7 @@
             aria-label="Search"
           />
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <div class="stickyPosition">
@@ -96,6 +96,18 @@
                   ><span style="color: wheat">Art</span></a
                 >
               </li>
+              <li>
+
+                <div class="active-cyan-3 active-cyan-4 mb-4">
+                  <div id=SearchBar>
+                  <input class="form-control"  type="text" id="iconified" placeholder="Search..." aria-label="Search">
+                </div>
+              </div>
+     
+      
+            </li>
+               
+              <li class="nav-item">
               <div id="connectLogo">
                 <div *ngIf="!ifLogged"><a [routerLink]="['', 'log-in']">
                   <div>
@@ -118,6 +130,7 @@
                   </div>
                 </div>
               </div>
+            </li>
               <div>
 
               </div>

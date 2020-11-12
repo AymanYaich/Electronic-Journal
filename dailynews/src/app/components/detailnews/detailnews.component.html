@@ -6,10 +6,11 @@
 </div>
 <br />
 <div>
- <div *ngFor="let oneNews of listNews| paginate: { itemsPerPage: 4, currentPage: p }">
-    <app-onenews [oneNews]="oneNews"></app-onenews>
+ <div *ngFor="let oneNews of listNews| paginate: { itemsPerPage: 5, currentPage: p }">
+    <app-onenewsdetail [oneNews]="oneNews"></app-onenewsdetail>
     <br />
   </div>
+ 
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
   
 </div>

@@ -38,6 +38,8 @@ import { AdminregionsComponent } from './components/adminregions/adminregions.co
 import { AdminusersComponent } from './components/adminusers/adminusers.component';
 import { AdminadvertiseComponent } from './components/adminadvertise/adminadvertise.component';
 import { AdminonenewsComponent } from './components/adminonenews/adminonenews.component';
+import { OnenewsdetailComponent } from './components/onenewsdetail/onenewsdetail.component';
+import { DataTestComponent } from './componets/data-test/data-test.component';
 
 
 @NgModule({
@@ -66,6 +68,8 @@ import { AdminonenewsComponent } from './components/adminonenews/adminonenews.co
    AdminusersComponent,
    AdminadvertiseComponent,
    AdminonenewsComponent,
+   OnenewsdetailComponent,
+   DataTestComponent,
    
   ],
   imports: [

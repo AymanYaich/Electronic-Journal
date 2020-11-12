@@ -28,7 +28,7 @@ let SportNews = require ('../dailynews/backend_data/models/sportNews')
 //let config = require ('./api/config/passport.js')
 let router=express.Router()
 let app =  express();
-app.use(cors());
+// app.use(cors());
 let fileupload = require("express-fileupload"); 
 app.use(fileupload())
 /**MongoDb connection */
@@ -105,4 +105,4 @@ app.listen(port,(err)=>{
 
   
 
-module.exports=app;
+//module.exports = app;

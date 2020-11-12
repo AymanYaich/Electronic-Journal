@@ -26,12 +26,16 @@ export class DetailnewsComponent implements OnInit {
     console.log("length",this.listNews)
     console.log("category",this.category)
   }
+  
    getAll(){
-     this.http.get(`http://localhost:3000/${this.category}/creates`).subscribe((datas)=>{
-       this.list=datas;
-       this.listNews=this.list.reverse();
-       this.ngOnInit()
-     })
-   }
+    this.http.get(`http://localhost:3000/${this.category}/creates`).subscribe((datas)=>{
+      this.list=datas;
+      let max= this.list.length-1
+      for ( let i =max ; i >= 0 ; i --){
+        this.listNews[max-i]=this.list[i]
+      }
+       })
+       console.log('listNews',this.listNews)
+  }
   
 }

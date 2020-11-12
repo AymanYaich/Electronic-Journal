@@ -5,16 +5,14 @@ import { ImageSendService } from '../../services/image-send.service'
 import { TextInterService } from '../../services/text-inter.service'
 import { DateService } from '../../services/date.service'
 import {StateOneNewsService} from '../../services/state-one-news.service'
-import { HttpClient } from '@angular/common/http'
 
 @Component({
-  selector: 'app-adminonenews',
-  templateUrl: './adminonenews.component.html',
-  styleUrls: ['./adminonenews.component.css']
+  selector: 'app-onenewsdetail',
+  templateUrl: './onenewsdetail.component.html',
+  styleUrls: ['./onenewsdetail.component.css']
 })
-export class AdminonenewsComponent implements OnInit {
+export class OnenewsdetailComponent implements OnInit {
   detailState:boolean;
-  message=""
   date:any;
   time:any;
   today:any;
@@ -30,16 +28,14 @@ export class AdminonenewsComponent implements OnInit {
   }
   @Input() oneNews:any=[]
   
-  
-  constructor(private http:HttpClient,
-              private router:Router ,
+ 
+ 
+  constructor(private router:Router ,
               private _dataInter:DataInteService,
               private _imageInter: ImageSendService,
               private _textInter: TextInterService,
               private _dateInteraction : DateService,
-              private stateServ : StateOneNewsService) { 
-              
-              }
+              private stateServ : StateOneNewsService) { }
 
   ngOnInit(): void {
     this.detailState=this.stateServ.detail
@@ -67,17 +63,27 @@ export class AdminonenewsComponent implements OnInit {
       this._dateInteraction.sendDate(`${this.date} ${this.time} ${this.oneNews.category}`)
                                       
     }
-   delete(){
-     console.log("delete")
-    this.http.delete(`http://localhost:3000/${this.oneNews.category}/delete/?title=${this.oneNews.title}`).subscribe(()=>{
-      this.ngOnInit()
-  //
-   })
-  
-   }
-    edit(){
-
+    readMore(){
+      
+     
+      this.router.navigate(['/news'],{queryParams:{title:this.oneNews.title.slice(0,35)}})
+     
+      this.sendTo();
+      this.sendImgTo();
+      this.sendTextTo();
+      this.sendDateTo();
+     
+        }
+    
     }
-    }
 
- 
+
+
+
+
+
+
+
+//
+
+

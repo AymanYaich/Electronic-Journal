@@ -29,6 +29,9 @@ route.get("/creates",(req,res)=>{
         }
     })
 })
+
+
+  
 route.delete("/delete/",(req,res)=>{
 
     NationalNews.findOneAndRemove({title:req.query.title},(err, news) => {
