@@ -28,18 +28,20 @@ export class AddNewsComponent implements OnInit {
    dataSize:number;
    detailNews:boolean=false
    successSend=false
-   editdeleteNews=false;
+   ifDelete=false;
+   ifUpdate=false;
+   data:any=[]
    
    @Input()  oneEdit:any=[];
   constructor(private http : HttpClient) { }
    
   ngOnInit(): void {
-   
+    
     this.categoryTitle=this.oneEdit.charAt(0).toUpperCase()+this.oneEdit.slice(1)
     this.getAll();
     this.dataSize=this.dataNews.length
     this.dataOrdered=this.dataNews.reverse()
-    console.log(this.dataNews)
+    console.log("data",this.dataNews)
 
   }
 
@@ -53,13 +55,13 @@ export class AddNewsComponent implements OnInit {
 }
  getAll(){
    this.http.get(`${this.url}/${this.oneEdit}/creates`).subscribe((datas)=>{
-    let data:any=[];
-   data=datas;
-   let max=data.length-1;
-   for( let i =max ; i>=0 ; i ++)
-     this.dataNews[max-i]=data[i]
+    this.data=datas;
+   let max=this.data.length-1;
+   for( let i =max ; i>=0 ; i --){
+     this.dataNews[max-i]=this.data[i]
+   }
   })
-   console.log("newsToDelete",this.dataNews)
+  
   }
   sendPre(){
 
@@ -135,7 +137,9 @@ export class AddNewsComponent implements OnInit {
  }
   add(){
     this.allOptions=false;
-    this.addNews=true
+    this.addNews=true;
+   
+    
   }
   readmore(){
     this.modelShow=false;
@@ -153,8 +157,15 @@ export class AddNewsComponent implements OnInit {
     this.addNews=false;
 
   }
-  deleteedit(){
-   this.editdeleteNews=true;
-   this.allOptions=false
+
+deleteStatus(){
+  this.allOptions=false;
+  this.ifDelete=true;
+  this.ifUpdate=false;
+}
+updateStatus(){
+  this.allOptions=false;
+  this.ifDelete=false;
+  this.ifUpdate=true;
 }
 }

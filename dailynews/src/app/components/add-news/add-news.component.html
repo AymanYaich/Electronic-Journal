@@ -36,9 +36,21 @@
                 type="button"
                 id="buttonNews"
                 class="btn btn-primary"
-                (click)="deleteedit()"
+                (click)="deleteStatus()"
               >
-                Edit/Delete
+                Delete
+              </button>
+            </div>
+          </th>
+          <th>
+            <div id="optiontable">
+              <button
+                type="button"
+                id="buttonNews"
+                class="btn btn-primary"
+                (click)="updateStatus()"
+              >
+                Update
               </button>
             </div>
           </th>
@@ -213,10 +225,10 @@
     </button>
   </div>
 </div>
-<div *ngIf="editdeleteNews">
+<div *ngIf="ifDelete">
   <br />
   <h2 style="color: grey; font-weight: 900">
-    Admin interface:News/{{ categoryTitle }}/Delete/Edit
+    Admin interface:News/{{ categoryTitle }}/Delete
   </h2>
   <div id="wrapper">
     
@@ -229,4 +241,20 @@
     </span>
    
   </div>
+</div>
+<div *ngIf="ifUpdate">
+  <br />
+  <h2 style="color: grey; font-weight: 900">
+    Admin interface:News/{{ categoryTitle }}/Update
+  </h2>
+  <div id="wrapper">
+    
+
+  
+    <span *ngFor="let oneNews of dataNews">
+      
+      <app-adminonenewsupdate [oneNews]="oneNews"></app-adminonenewsupdate>
+   
+    </span>
+   
 </div>

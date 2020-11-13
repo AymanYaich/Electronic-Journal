@@ -23,7 +23,7 @@ export class AdminnewsComponent implements OnInit {
   constructor(public http: HttpClient,public interctionServ : AdminInteractionService ) { }
 
   ngOnInit(): void {
-   // this.getRegions()
+  
    
   }
 

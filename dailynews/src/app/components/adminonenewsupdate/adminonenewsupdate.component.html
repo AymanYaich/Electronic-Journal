@@ -1,0 +1,42 @@
+<div  id="newscomponent" *ngIf="!updateStatus">
+    <div>
+      <img src="{{ oneNews.image }}" />
+    </div>
+    <div id="addedAt">
+      <p><span>&#x270D;</span> {{ date }} @ {{ time }} GMT</p>
+    </div>
+    <div id="onenewsTitle">
+      <p>{{ oneNews.title }}</p>
+    </div>
+    <div id="onenewsDescription">
+      <p>
+        {{ oneNews.text.slice(0, 110) }}<span style="font-weight: bold">...</span>
+       
+      </p>
+    </div>
+  <p>{{message}}  </p>
+   
+    <div id="buttonEdit">
+      <button type = "button" class= "btn btn-secondary" (click) = "update()" >
+        Update
+      </button>
+  
+    </div>
+  </div>
+  <div *ngIf="updateStatus">
+    <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+        <label class="custom-control-label" for="customSwitch1">Edit the title</label>
+      </div>
+      <br>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+        <label class="custom-control-label" for="customSwitch1">Edit the image</label>
+      </div>
+      <br>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+        <label class="custom-control-label" for="customSwitch1">EDit the text</label>
+      </div>
+  </div>
+  

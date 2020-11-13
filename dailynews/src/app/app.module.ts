@@ -40,6 +40,7 @@ import { AdminadvertiseComponent } from './components/adminadvertise/adminadvert
 import { AdminonenewsComponent } from './components/adminonenews/adminonenews.component';
 import { OnenewsdetailComponent } from './components/onenewsdetail/onenewsdetail.component';
 import { DataTestComponent } from './componets/data-test/data-test.component';
+import { AdminonenewsupdateComponent } from './components/adminonenewsupdate/adminonenewsupdate.component';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { DataTestComponent } from './componets/data-test/data-test.component';
    AdminonenewsComponent,
    OnenewsdetailComponent,
    DataTestComponent,
+   AdminonenewsupdateComponent,
    
   ],
   imports: [

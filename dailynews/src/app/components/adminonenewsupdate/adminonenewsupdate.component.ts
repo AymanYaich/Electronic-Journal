@@ -8,13 +8,13 @@ import {StateOneNewsService} from '../../services/state-one-news.service'
 import { HttpClient } from '@angular/common/http'
 
 @Component({
-  selector: 'app-adminonenews',
-  templateUrl: './adminonenews.component.html',
-  styleUrls: ['./adminonenews.component.css']
+  selector: 'app-adminonenewsupdate',
+  templateUrl: './adminonenewsupdate.component.html',
+  styleUrls: ['./adminonenewsupdate.component.css']
 })
-export class AdminonenewsComponent implements OnInit{
+export class AdminonenewsupdateComponent implements OnInit {
   detailState:boolean;
-  
+  updateStatus:boolean=false;
   message=""
   date:any;
   time:any;
@@ -30,7 +30,7 @@ export class AdminonenewsComponent implements OnInit{
     6:"Sunday"
   }
   @Input() oneNews:any=[]
-  
+ 
   
   constructor(private http:HttpClient,
               private router:Router ,
@@ -69,15 +69,14 @@ export class AdminonenewsComponent implements OnInit{
       this._dateInteraction.sendDate(`${this.date} ${this.time} ${this.oneNews.category}`)
                                       
     }
-   delete(){
-     console.log("delete")
-    this.http.delete(`http://localhost:3000/${this.oneNews.category}/delete/?title=${this.oneNews.title}`).subscribe(()=>{
-       this.ngOnInit()
-  //
-   })
+   update(){
+    this.updateStatus=true;
+   
  
    }
   
     }
 
  
+
+//*//
