@@ -231,30 +231,27 @@
     Admin interface:News/{{ categoryTitle }}/Delete
   </h2>
   <div id="wrapper">
-    
-
-  
     <span *ngFor="let oneNews of dataNews">
-      
       <app-adminonenews [oneNews]="oneNews"></app-adminonenews>
-   
     </span>
-   
   </div>
 </div>
 <div *ngIf="ifUpdate">
-  <br />
-  <h2 style="color: grey; font-weight: 900">
-    Admin interface:News/{{ categoryTitle }}/Update
-  </h2>
-  <div id="wrapper">
-    
-
-  
-    <span *ngFor="let oneNews of dataNews">
-      
-      <app-adminonenewsupdate [oneNews]="oneNews"></app-adminonenewsupdate>
-   
-    </span>
-   
+  <div *ngIf="!ifUpdateStatus">
+    <br />
+    <h2 style="color: grey; font-weight: 900">
+      Admin interface:News/{{ categoryTitle }}/Update
+    </h2>
+    <div id="wrapper">
+      <span *ngFor="let oneNews of dataNews">
+        <app-adminonenewsupdate [oneNews]="oneNews"></app-adminonenewsupdate>
+      </span>
+    </div>
+  </div>
+  <div *ngIf="ifUpdateStatus">
+    <h2 style="color: grey; font-weight: 900">
+      Admin interface:News/{{ categoryTitle }}/Update
+    </h2>
+    <h1>Hello Update</h1>
+  </div>
 </div>

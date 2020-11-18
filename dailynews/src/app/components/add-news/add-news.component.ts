@@ -1,11 +1,15 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, AfterViewInit, ViewChild, ViewChildren } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { UpdatestatusService } from '../../services/updatestatus.service'
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+import { AdminonenewsupdateComponent } from '../adminonenewsupdate/adminonenewsupdate.component';
+
 @Component({
   selector: 'app-add-news',
   templateUrl: './add-news.component.html',
   styleUrls: ['./add-news.component.css']
 })
-export class AddNewsComponent implements OnInit {
+export class AddNewsComponent implements AfterViewInit {
    imageUrl="";
    title="";
    textNews="";
@@ -30,19 +34,22 @@ export class AddNewsComponent implements OnInit {
    successSend=false
    ifDelete=false;
    ifUpdate=false;
+   ifUpdateStatus:boolean=false;
    data:any=[]
    
    @Input()  oneEdit:any=[];
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient,
+              private updateServ:UpdatestatusService) { }
    
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     
+   
     this.categoryTitle=this.oneEdit.charAt(0).toUpperCase()+this.oneEdit.slice(1)
     this.getAll();
     this.dataSize=this.dataNews.length
     this.dataOrdered=this.dataNews.reverse()
-    console.log("data",this.dataNews)
-
+   
+   console.log("status",this.updateServ.stateUpdate)
   }
 
   fileChangeEvent(event){
@@ -72,7 +79,7 @@ export class AddNewsComponent implements OnInit {
      }
     
     this.http.post(`${this.url}/${this.oneEdit}/creates`,news).subscribe(()=>{
-     this.ngOnInit()
+     this.ngAfterViewInit()
     })
  }
 
@@ -168,4 +175,8 @@ updateStatus(){
   this.ifDelete=false;
   this.ifUpdate=true;
 }
+stateUpdate(){
+
+}
+
 }

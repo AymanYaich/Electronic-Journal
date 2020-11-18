@@ -1,4 +1,4 @@
-<div  id="newscomponent" *ngIf="!updateStatus">
+<div  id="newscomponent" >
     <div>
       <img src="{{ oneNews.image }}" />
     </div>
@@ -17,26 +17,10 @@
   <p>{{message}}  </p>
    
     <div id="buttonEdit">
-      <button type = "button" class= "btn btn-secondary" (click) = "update()" >
+      <button type = "button" class= "btn btn-secondary" (click)="update()" >
         Update
       </button>
   
     </div>
   </div>
-  <div *ngIf="updateStatus">
-    <div class="custom-control custom-switch">
-        <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
-        <label class="custom-control-label" for="customSwitch1">Edit the title</label>
-      </div>
-      <br>
-      <div class="custom-control custom-switch">
-        <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
-        <label class="custom-control-label" for="customSwitch1">Edit the image</label>
-      </div>
-      <br>
-      <div class="custom-control custom-switch">
-        <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
-        <label class="custom-control-label" for="customSwitch1">EDit the text</label>
-      </div>
-  </div>
-  
+ 

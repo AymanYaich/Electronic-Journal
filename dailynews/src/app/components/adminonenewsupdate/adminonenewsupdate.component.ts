@@ -5,6 +5,7 @@ import { ImageSendService } from '../../services/image-send.service'
 import { TextInterService } from '../../services/text-inter.service'
 import { DateService } from '../../services/date.service'
 import {StateOneNewsService} from '../../services/state-one-news.service'
+import { UpdatestatusService } from '../../services/updatestatus.service'
 import { HttpClient } from '@angular/common/http'
 
 @Component({
@@ -12,9 +13,9 @@ import { HttpClient } from '@angular/common/http'
   templateUrl: './adminonenewsupdate.component.html',
   styleUrls: ['./adminonenewsupdate.component.css']
 })
-export class AdminonenewsupdateComponent implements OnInit {
+export class AdminonenewsupdateComponent implements AfterViewInit {
   detailState:boolean;
-  updateStatus:boolean=false;
+  updateStatus:Number=0;
   message=""
   date:any;
   time:any;
@@ -29,8 +30,9 @@ export class AdminonenewsupdateComponent implements OnInit {
     5:"Saturday",
     6:"Sunday"
   }
+  
   @Input() oneNews:any=[]
- 
+
   
   constructor(private http:HttpClient,
               private router:Router ,
@@ -38,15 +40,17 @@ export class AdminonenewsupdateComponent implements OnInit {
               private _imageInter: ImageSendService,
               private _textInter: TextInterService,
               private _dateInteraction : DateService,
-              private stateServ : StateOneNewsService) { 
+              private stateServ : StateOneNewsService,
+              private updateServ:UpdatestatusService) { 
               
               }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.detailState=this.stateServ.detail
     this.addedAt();
-    
-    console.log(this.detailState)
+   
+  
+  
   }
   
    addedAt(){
@@ -70,8 +74,13 @@ export class AdminonenewsupdateComponent implements OnInit {
                                       
     }
    update(){
-    this.updateStatus=true;
-   
+     //this.updateServ.updateState();
+     this.sendTo();
+     this.sendImgTo();
+     this.sendTextTo();
+     
+    //console.log("newStatus",this.updateServ.stateUpdate)
+    
  
    }
   
@@ -79,4 +88,4 @@ export class AdminonenewsupdateComponent implements OnInit {
 
  
 
-//*//
+
